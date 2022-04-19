@@ -1,0 +1,2485 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/get-protocols:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'protocols are listed below'
+                  data:
+                    protocols:
+                      -
+                        protocol_id: 4
+                        title: 'Protocol for dentists updated'
+                        status: 1
+                        created_at: '2021-11-09T17:32:48.000000Z'
+                      -
+                        protocol_id: 6
+                        title: 'new protocol'
+                        status: 1
+                        created_at: '2021-11-10T14:15:42.000000Z'
+                      -
+                        protocol_id: 7
+                        title: 'This is new protocol for testing updated'
+                        status: 1
+                        created_at: '2021-11-10T17:03:18.000000Z'
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: 'protocols are listed below'
+                  data:
+                    type: object
+                    example:
+                      protocols:
+                        -
+                          protocol_id: 4
+                          title: 'Protocol for dentists updated'
+                          status: 1
+                          created_at: '2021-11-09T17:32:48.000000Z'
+                        -
+                          protocol_id: 6
+                          title: 'new protocol'
+                          status: 1
+                          created_at: '2021-11-10T14:15:42.000000Z'
+                        -
+                          protocol_id: 7
+                          title: 'This is new protocol for testing updated'
+                          status: 1
+                          created_at: '2021-11-10T17:03:18.000000Z'
+                  status:
+                    type: integer
+                    example: 200
+      tags:
+        - 'Protocol Apis'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                secret:
+                  type: string
+                  description: ''
+                  example: sint
+              required:
+                - secret
+      security: []
+  /api/search-protocols:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'searched protocols are listed below'
+                  data:
+                    protocols:
+                      -
+                        protocol_id: 4
+                        title: 'Protocol for dentists updated'
+                        status: 1
+                        created_at: '2021-11-09T17:32:48.000000Z'
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: 'searched protocols are listed below'
+                  data:
+                    type: object
+                    example:
+                      protocols:
+                        -
+                          protocol_id: 4
+                          title: 'Protocol for dentists updated'
+                          status: 1
+                          created_at: '2021-11-09T17:32:48.000000Z'
+                  status:
+                    type: integer
+                    example: 200
+        400:
+          description: 'title validation'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Please fix the following error to continue'
+                  errors: 'The title field is required.'
+                  status: 400
+                properties:
+                  message:
+                    type: string
+                    example: 'Please fix the following error to continue'
+                  errors:
+                    type: string
+                    example: 'The title field is required.'
+                  status:
+                    type: integer
+                    example: 400
+      tags:
+        - 'Protocol Apis'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: ''
+                  example: nulla
+                secret:
+                  type: string
+                  description: ''
+                  example: repellendus
+              required:
+                - title
+                - secret
+      security: []
+  /api/get-quiz:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'quiz details is below'
+                  data:
+                    quizs:
+                      -
+                        question_id: 46
+                        quiz_id: 10
+                        question: 'Obcaecati ullam face'
+                        hint: 'Magni ut commodo nat'
+                        type: 1
+                        created_at: '2021-11-05T17:02:00.000000Z'
+                        updated_at: '2021-11-05T17:02:00.000000Z'
+                        deleted_at: null
+                        options:
+                          -
+                            option_id: 114
+                            question_id: 46
+                            option: 'Yes'
+                            is_correct: 1
+                            created_at: '2021-11-05T17:02:00.000000Z'
+                            updated_at: '2021-11-05T17:02:00.000000Z'
+                            deleted_at: null
+                          -
+                            option_id: 115
+                            question_id: 46
+                            option: 'No'
+                            is_correct: 2
+                            created_at: '2021-11-05T17:02:00.000000Z'
+                            updated_at: '2021-11-05T17:02:00.000000Z'
+                            deleted_at: null
+                      -
+                        question_id: 47
+                        quiz_id: 10
+                        question: 'Pariatur Omnis volu'
+                        hint: 'A voluptate repudian'
+                        type: 2
+                        created_at: '2021-11-05T17:02:00.000000Z'
+                        updated_at: '2021-11-05T17:02:00.000000Z'
+                        deleted_at: null
+                        options:
+                          -
+                            option_id: 116
+                            question_id: 47
+                            option: 'Quia quidem proident'
+                            is_correct: 1
+                            created_at: '2021-11-05T17:02:00.000000Z'
+                            updated_at: '2021-11-05T17:02:00.000000Z'
+                            deleted_at: null
+                          -
+                            option_id: 117
+                            question_id: 47
+                            option: 'Libero dolores reici'
+                            is_correct: 1
+                            created_at: '2021-11-05T17:02:00.000000Z'
+                            updated_at: '2021-11-05T17:02:00.000000Z'
+                            deleted_at: null
+                          -
+                            option_id: 118
+                            question_id: 47
+                            option: 'Est expedita error q'
+                            is_correct: 1
+                            created_at: '2021-11-05T17:02:00.000000Z'
+                            updated_at: '2021-11-05T17:02:00.000000Z'
+                            deleted_at: null
+                          -
+                            option_id: 119
+                            question_id: 47
+                            option: 'Quas et sunt quae re'
+                            is_correct: 1
+                            created_at: '2021-11-05T17:02:00.000000Z'
+                            updated_at: '2021-11-05T17:02:00.000000Z'
+                            deleted_at: null
+                      -
+                        question_id: 48
+                        quiz_id: 10
+                        question: 'Alias cillum veniam'
+                        hint: 'Ad voluptatem eligen'
+                        type: 3
+                        created_at: '2021-11-05T17:02:00.000000Z'
+                        updated_at: '2021-11-05T17:02:00.000000Z'
+                        deleted_at: null
+                        options:
+                          -
+                            option_id: 120
+                            question_id: 48
+                            option: 'Commodi beatae minus'
+                            is_correct: 2
+                            created_at: '2021-11-05T17:02:00.000000Z'
+                            updated_at: '2021-11-05T17:02:00.000000Z'
+                            deleted_at: null
+                          -
+                            option_id: 121
+                            question_id: 48
+                            option: 'Impedit accusamus n'
+                            is_correct: 1
+                            created_at: '2021-11-05T17:02:00.000000Z'
+                            updated_at: '2021-11-05T17:02:00.000000Z'
+                            deleted_at: null
+                          -
+                            option_id: 122
+                            question_id: 48
+                            option: 'Quisquam dolores fug'
+                            is_correct: 2
+                            created_at: '2021-11-05T17:02:01.000000Z'
+                            updated_at: '2021-11-05T17:02:01.000000Z'
+                            deleted_at: null
+                          -
+                            option_id: 123
+                            question_id: 48
+                            option: 'Sed eligendi aliquid'
+                            is_correct: 2
+                            created_at: '2021-11-05T17:02:01.000000Z'
+                            updated_at: '2021-11-05T17:02:01.000000Z'
+                            deleted_at: null
+                      -
+                        question_id: 49
+                        quiz_id: 10
+                        question: 'Qui magni sunt dolor'
+                        hint: 'Culpa qui ullam null'
+                        type: 4
+                        created_at: '2021-11-05T17:02:01.000000Z'
+                        updated_at: '2021-11-05T17:02:01.000000Z'
+                        deleted_at: null
+                        options:
+                          -
+                            option_id: 124
+                            question_id: 49
+                            option: 1294705576.jpg
+                            is_correct: 1
+                            created_at: '2021-11-05T17:02:01.000000Z'
+                            updated_at: '2021-11-05T17:02:01.000000Z'
+                            deleted_at: null
+                          -
+                            option_id: 125
+                            question_id: 49
+                            option: 4606618650.png
+                            is_correct: 2
+                            created_at: '2021-11-05T17:02:01.000000Z'
+                            updated_at: '2021-11-05T17:02:01.000000Z'
+                            deleted_at: null
+                          -
+                            option_id: 126
+                            question_id: 49
+                            option: 3067659607.jpg
+                            is_correct: 2
+                            created_at: '2021-11-05T17:02:01.000000Z'
+                            updated_at: '2021-11-05T17:02:01.000000Z'
+                            deleted_at: null
+                          -
+                            option_id: 127
+                            question_id: 49
+                            option: 3042335406.png
+                            is_correct: 2
+                            created_at: '2021-11-05T17:02:01.000000Z'
+                            updated_at: '2021-11-05T17:02:01.000000Z'
+                            deleted_at: null
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: 'quiz details is below'
+                  data:
+                    type: object
+                    example:
+                      quizs:
+                        -
+                          question_id: 46
+                          quiz_id: 10
+                          question: 'Obcaecati ullam face'
+                          hint: 'Magni ut commodo nat'
+                          type: 1
+                          created_at: '2021-11-05T17:02:00.000000Z'
+                          updated_at: '2021-11-05T17:02:00.000000Z'
+                          deleted_at: null
+                          options:
+                            -
+                              option_id: 114
+                              question_id: 46
+                              option: 'Yes'
+                              is_correct: 1
+                              created_at: '2021-11-05T17:02:00.000000Z'
+                              updated_at: '2021-11-05T17:02:00.000000Z'
+                              deleted_at: null
+                            -
+                              option_id: 115
+                              question_id: 46
+                              option: 'No'
+                              is_correct: 2
+                              created_at: '2021-11-05T17:02:00.000000Z'
+                              updated_at: '2021-11-05T17:02:00.000000Z'
+                              deleted_at: null
+                        -
+                          question_id: 47
+                          quiz_id: 10
+                          question: 'Pariatur Omnis volu'
+                          hint: 'A voluptate repudian'
+                          type: 2
+                          created_at: '2021-11-05T17:02:00.000000Z'
+                          updated_at: '2021-11-05T17:02:00.000000Z'
+                          deleted_at: null
+                          options:
+                            -
+                              option_id: 116
+                              question_id: 47
+                              option: 'Quia quidem proident'
+                              is_correct: 1
+                              created_at: '2021-11-05T17:02:00.000000Z'
+                              updated_at: '2021-11-05T17:02:00.000000Z'
+                              deleted_at: null
+                            -
+                              option_id: 117
+                              question_id: 47
+                              option: 'Libero dolores reici'
+                              is_correct: 1
+                              created_at: '2021-11-05T17:02:00.000000Z'
+                              updated_at: '2021-11-05T17:02:00.000000Z'
+                              deleted_at: null
+                            -
+                              option_id: 118
+                              question_id: 47
+                              option: 'Est expedita error q'
+                              is_correct: 1
+                              created_at: '2021-11-05T17:02:00.000000Z'
+                              updated_at: '2021-11-05T17:02:00.000000Z'
+                              deleted_at: null
+                            -
+                              option_id: 119
+                              question_id: 47
+                              option: 'Quas et sunt quae re'
+                              is_correct: 1
+                              created_at: '2021-11-05T17:02:00.000000Z'
+                              updated_at: '2021-11-05T17:02:00.000000Z'
+                              deleted_at: null
+                        -
+                          question_id: 48
+                          quiz_id: 10
+                          question: 'Alias cillum veniam'
+                          hint: 'Ad voluptatem eligen'
+                          type: 3
+                          created_at: '2021-11-05T17:02:00.000000Z'
+                          updated_at: '2021-11-05T17:02:00.000000Z'
+                          deleted_at: null
+                          options:
+                            -
+                              option_id: 120
+                              question_id: 48
+                              option: 'Commodi beatae minus'
+                              is_correct: 2
+                              created_at: '2021-11-05T17:02:00.000000Z'
+                              updated_at: '2021-11-05T17:02:00.000000Z'
+                              deleted_at: null
+                            -
+                              option_id: 121
+                              question_id: 48
+                              option: 'Impedit accusamus n'
+                              is_correct: 1
+                              created_at: '2021-11-05T17:02:00.000000Z'
+                              updated_at: '2021-11-05T17:02:00.000000Z'
+                              deleted_at: null
+                            -
+                              option_id: 122
+                              question_id: 48
+                              option: 'Quisquam dolores fug'
+                              is_correct: 2
+                              created_at: '2021-11-05T17:02:01.000000Z'
+                              updated_at: '2021-11-05T17:02:01.000000Z'
+                              deleted_at: null
+                            -
+                              option_id: 123
+                              question_id: 48
+                              option: 'Sed eligendi aliquid'
+                              is_correct: 2
+                              created_at: '2021-11-05T17:02:01.000000Z'
+                              updated_at: '2021-11-05T17:02:01.000000Z'
+                              deleted_at: null
+                        -
+                          question_id: 49
+                          quiz_id: 10
+                          question: 'Qui magni sunt dolor'
+                          hint: 'Culpa qui ullam null'
+                          type: 4
+                          created_at: '2021-11-05T17:02:01.000000Z'
+                          updated_at: '2021-11-05T17:02:01.000000Z'
+                          deleted_at: null
+                          options:
+                            -
+                              option_id: 124
+                              question_id: 49
+                              option: 1294705576.jpg
+                              is_correct: 1
+                              created_at: '2021-11-05T17:02:01.000000Z'
+                              updated_at: '2021-11-05T17:02:01.000000Z'
+                              deleted_at: null
+                            -
+                              option_id: 125
+                              question_id: 49
+                              option: 4606618650.png
+                              is_correct: 2
+                              created_at: '2021-11-05T17:02:01.000000Z'
+                              updated_at: '2021-11-05T17:02:01.000000Z'
+                              deleted_at: null
+                            -
+                              option_id: 126
+                              question_id: 49
+                              option: 3067659607.jpg
+                              is_correct: 2
+                              created_at: '2021-11-05T17:02:01.000000Z'
+                              updated_at: '2021-11-05T17:02:01.000000Z'
+                              deleted_at: null
+                            -
+                              option_id: 127
+                              question_id: 49
+                              option: 3042335406.png
+                              is_correct: 2
+                              created_at: '2021-11-05T17:02:01.000000Z'
+                              updated_at: '2021-11-05T17:02:01.000000Z'
+                              deleted_at: null
+                  status:
+                    type: integer
+                    example: 200
+        400:
+          description: 'quiz_id validation'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Please fix the following error to continue'
+                  errors: 'The quiz id field is required.'
+                  status: 400
+                properties:
+                  message:
+                    type: string
+                    example: 'Please fix the following error to continue'
+                  errors:
+                    type: string
+                    example: 'The quiz id field is required.'
+                  status:
+                    type: integer
+                    example: 400
+      tags:
+        - 'Quiz Apis'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                quiz_id:
+                  type: integer
+                  description: 'The id of the quiz.'
+                  example: 2
+                secret:
+                  type: string
+                  description: ''
+                  example: ullam
+              required:
+                - quiz_id
+                - secret
+      security: []
+  /api/attempt-quiz:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Your answer for this question has been saved'
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: 'Your answer for this question has been saved'
+                  status:
+                    type: integer
+                    example: 200
+        400:
+          description: 'user_id validation'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Please fix the following error to continue'
+                  errors: 'The user id field is required.'
+                  status: 400
+                properties:
+                  message:
+                    type: string
+                    example: 'Please fix the following error to continue'
+                  errors:
+                    type: string
+                    example: 'The user id field is required.'
+                  status:
+                    type: integer
+                    example: 400
+      tags:
+        - 'Quiz Apis'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                option_id:
+                  type: integer
+                  description: 'The id of the option.'
+                  example: 17
+                question_id:
+                  type: integer
+                  description: 'The id of the question.'
+                  example: 16
+                user_id:
+                  type: array
+                  description: 'The id of the user.'
+                  example:
+                    - qui
+                  items:
+                    type: string
+                secret:
+                  type: string
+                  description: ''
+                  example: occaecati
+              required:
+                - option_id
+                - question_id
+                - user_id
+                - secret
+      security: []
+  /api/get-quiz-result:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Your quiz submited successfully'
+                  score: 0
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: 'Your quiz submited successfully'
+                  score:
+                    type: integer
+                    example: 0
+                  status:
+                    type: integer
+                    example: 200
+        400:
+          description: 'user_id validation'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Please fix the following error to continue'
+                  errors: 'The user id field is required.'
+                  status: 400
+                properties:
+                  message:
+                    type: string
+                    example: 'Please fix the following error to continue'
+                  errors:
+                    type: string
+                    example: 'The user id field is required.'
+                  status:
+                    type: integer
+                    example: 400
+      tags:
+        - 'Quiz Apis'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                quiz_id:
+                  type: string
+                  description: ''
+                  example: perspiciatis
+                user_id:
+                  type: array
+                  description: 'The id of the user.'
+                  example:
+                    - labore
+                  items:
+                    type: string
+                option_id:
+                  type: integer
+                  description: 'The id of the option.'
+                  example: 15
+                question_id:
+                  type: integer
+                  description: 'The id of the question.'
+                  example: 13
+                secret:
+                  type: string
+                  description: ''
+                  example: et
+              required:
+                - quiz_id
+                - user_id
+                - option_id
+                - question_id
+                - secret
+      security: []
+  /api/register:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'User Created Successfully'
+                  data:
+                    user:
+                      first_name: john
+                      last_name: arthor
+                      email: talha.hussain@eegamesstudio.com
+                      user_role: 5
+                      otp: 49013
+                      updated_at: '2021-11-16T14:36:28.000000Z'
+                      created_at: '2021-11-16T14:36:28.000000Z'
+                      id: 25
+                  access_token: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzkwODM0ZDM3Y2E0ODYyMGRiOTgwOWRlOGZmMWFiZGExNjNhOGFiMzliNDVlYzk1ZTkyMDgxNWQ5N2JmNzcwNzI2YTY4ZWJlNWQxZDMyNTEiLCJpYXQiOjE2MzcwNzMzOTIuNTUyODg5LCJuYmYiOjE2MzcwNzMzOTIuNTUyODk0LCJleHAiOjE2Njg2MDkzOTIuNDU5MTc1LCJzdWIiOiIyNSIsInNjb3BlcyI6W119.PYqR8TxywalG2RuUIqczm35pLbUQjN47rN4m3mXRTeswykcBATQtqj9azznqOOlk1z3-jZDb9g8JJut-v3buYE_bjjeugGACoH0FuKfNXKUxClbF1E0Yx3COcXqumWQ0Y3rlkrygg5JU-vks1HSZXNdEQ6YX8VUsIDRm-dUjDLFJVSdhfVnr5_LnZwFNqyoAeObDac0tQPc8ad3UL6s2T-BNVP2hj86JTGNz1PtjMAPPmmQLEYT6mhGaghZAPSqEcP16s2ZAa0Dm9lxHVjOCF11x2vQ39FC4H_WuxPv1PcnWGX4VNHqxbong-UZ7kmj7s8L0fa9h70QLo4-B3U-PDuqZ7ddMUlJOaXfbRHBoSZAqHhCCVziSTBwQG1D-MuBoyjQZlVq9LI2Fsk-5ygCaooMDTfnfAKK2tZXGNe1qETTOOl3AQ383SPPC5LJEqpIgnJ-3YXdEiJybZ7HmModoT3hzENTQJ_387efZdDxfFrNVx3RslIch4zRDIVrOtWkankzEVF0Rs3ci8ViRLym31XJT_Ffr9U4fZFmD9TLQfjNhhQUK2tRR5DCNupkFhoPq8ardHZQ6lyq_AdUQtPg5MX3dywCd9GTXnqp8JUQGk3FNzYkOS-Zf1O48FIUk7QiAiG5XWqvt5GaTOlrdjz71sDQsEr5MspQsQ06Xf-P3SzY
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: 'User Created Successfully'
+                  data:
+                    type: object
+                    example:
+                      user:
+                        first_name: john
+                        last_name: arthor
+                        email: talha.hussain@eegamesstudio.com
+                        user_role: 5
+                        otp: 49013
+                        updated_at: '2021-11-16T14:36:28.000000Z'
+                        created_at: '2021-11-16T14:36:28.000000Z'
+                        id: 25
+                  access_token:
+                    type: string
+                    example: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzkwODM0ZDM3Y2E0ODYyMGRiOTgwOWRlOGZmMWFiZGExNjNhOGFiMzliNDVlYzk1ZTkyMDgxNWQ5N2JmNzcwNzI2YTY4ZWJlNWQxZDMyNTEiLCJpYXQiOjE2MzcwNzMzOTIuNTUyODg5LCJuYmYiOjE2MzcwNzMzOTIuNTUyODk0LCJleHAiOjE2Njg2MDkzOTIuNDU5MTc1LCJzdWIiOiIyNSIsInNjb3BlcyI6W119.PYqR8TxywalG2RuUIqczm35pLbUQjN47rN4m3mXRTeswykcBATQtqj9azznqOOlk1z3-jZDb9g8JJut-v3buYE_bjjeugGACoH0FuKfNXKUxClbF1E0Yx3COcXqumWQ0Y3rlkrygg5JU-vks1HSZXNdEQ6YX8VUsIDRm-dUjDLFJVSdhfVnr5_LnZwFNqyoAeObDac0tQPc8ad3UL6s2T-BNVP2hj86JTGNz1PtjMAPPmmQLEYT6mhGaghZAPSqEcP16s2ZAa0Dm9lxHVjOCF11x2vQ39FC4H_WuxPv1PcnWGX4VNHqxbong-UZ7kmj7s8L0fa9h70QLo4-B3U-PDuqZ7ddMUlJOaXfbRHBoSZAqHhCCVziSTBwQG1D-MuBoyjQZlVq9LI2Fsk-5ygCaooMDTfnfAKK2tZXGNe1qETTOOl3AQ383SPPC5LJEqpIgnJ-3YXdEiJybZ7HmModoT3hzENTQJ_387efZdDxfFrNVx3RslIch4zRDIVrOtWkankzEVF0Rs3ci8ViRLym31XJT_Ffr9U4fZFmD9TLQfjNhhQUK2tRR5DCNupkFhoPq8ardHZQ6lyq_AdUQtPg5MX3dywCd9GTXnqp8JUQGk3FNzYkOS-Zf1O48FIUk7QiAiG5XWqvt5GaTOlrdjz71sDQsEr5MspQsQ06Xf-P3SzY
+                  status:
+                    type: integer
+                    example: 200
+        400:
+          description: 'password validation'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Please fix the following error to continue'
+                  errors: 'The password field is required.'
+                  status: 400
+                properties:
+                  message:
+                    type: string
+                    example: 'Please fix the following error to continue'
+                  errors:
+                    type: string
+                    example: 'The password field is required.'
+                  status:
+                    type: integer
+                    example: 400
+      tags:
+        - 'Authentication Apis'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  description: 'The first_name of the user.'
+                  example: voluptatem
+                last_name:
+                  type: string
+                  description: 'The last_name of the user.'
+                  example: veritatis
+                email:
+                  type: email
+                  description: 'The email of the user.'
+                  example: eius
+                password:
+                  type: string
+                  description: 'The password of the user.'
+                  example: adipisci
+                secret:
+                  type: string
+                  description: ''
+                  example: doloremque
+              required:
+                - first_name
+                - last_name
+                - email
+                - password
+                - secret
+      security: []
+  /api/login:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    users:
+                      id: 25
+                      first_name: john
+                      last_name: arthor
+                      email: talha.hussain@eegamesstudio.com
+                      phone: null
+                      email_verified_at: null
+                      image: null
+                      user_role: 5
+                      status: 1
+                      otp: '49013'
+                      created_at: '2021-11-16T14:36:28.000000Z'
+                      updated_at: '2021-11-16T14:36:28.000000Z'
+                      deleted_at: null
+                  message: 'You have successfully logged in '
+                  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiM2E5ZmM3OWY3MmNkZDMyODE3N2NkNDkxNDJlZDZlOTAzOTAzMTUwYjNlNWU3MjQyNjQwZjZkMjAyNzJkY2UyNGZlNzA3MGU1OTI4ODBmZGUiLCJpYXQiOjE2MzcwNzM0MTkuNjYxMzIyLCJuYmYiOjE2MzcwNzM0MTkuNjYxMzI3LCJleHAiOjE2Njg2MDk0MTkuNjAzMzY5LCJzdWIiOiIyNSIsInNjb3BlcyI6W119.v6w2YpbsIH9zvfZAbWYw_cEGJIKT2W6svWGQDtfmujhqQlbaCcGylsq6rcJ69Gx7NoYEN_4VIQ_Yj6bxwxf52Gxzwq5FRpujwDD2Yd6sZJzZpY9QMzXi2yXvxAJPrk6uv1Db2iNekumBv6bt0lJfnDEgi7LbBtVZsHb7IQl4-4bHWBhBX0NZymcVmdsRwAx1YTzk9CXidFnTJHJqGjKUWSmBR34Z2obQGTcOMIcZ_55tKTGx9lgR9DMaN3wLiYkNWc6W_ToObZgEtbwsiFzCtJe-4YL86bAivZTfHoM0ol6fn92NqF5YN2Ujq0U8rM21XFyhx4VPT7JcOxcjncQOdeZcr90xFfMb4elBQ-VTwUB3xHcoesceoxCmnV2n3PUSWBHdj4BsLYoTGSt-3m3rEmdphVybdC7FO-eh0BrGoMBJosQg1ts11tapN4Z72orJf2k8ZK6iA6dAf551eHzb-u2zllJGswdvPH0YjvG23eTTdpfYB3jnKLMOXutVfipEtaYhSkq-aKKAcbMRmnnkVSUvTh5TFnmoaluYLiAteAG8vQLM_vb_DJej0GLsTpCZg-Qhp2I3P98tnqyxeBb4Ypvuw-ulfEmtwq4OcDHB5A7PGCeem45dkj-ouuy6dVydtEgWGzP0txZxJqGNB2wvv7jXwFFJYNwbZUpf-XXzyZg
+                  status: 200
+                properties:
+                  data:
+                    type: object
+                    example:
+                      users:
+                        id: 25
+                        first_name: john
+                        last_name: arthor
+                        email: talha.hussain@eegamesstudio.com
+                        phone: null
+                        email_verified_at: null
+                        image: null
+                        user_role: 5
+                        status: 1
+                        otp: '49013'
+                        created_at: '2021-11-16T14:36:28.000000Z'
+                        updated_at: '2021-11-16T14:36:28.000000Z'
+                        deleted_at: null
+                  message:
+                    type: string
+                    example: 'You have successfully logged in '
+                  token:
+                    type: string
+                    example: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiM2E5ZmM3OWY3MmNkZDMyODE3N2NkNDkxNDJlZDZlOTAzOTAzMTUwYjNlNWU3MjQyNjQwZjZkMjAyNzJkY2UyNGZlNzA3MGU1OTI4ODBmZGUiLCJpYXQiOjE2MzcwNzM0MTkuNjYxMzIyLCJuYmYiOjE2MzcwNzM0MTkuNjYxMzI3LCJleHAiOjE2Njg2MDk0MTkuNjAzMzY5LCJzdWIiOiIyNSIsInNjb3BlcyI6W119.v6w2YpbsIH9zvfZAbWYw_cEGJIKT2W6svWGQDtfmujhqQlbaCcGylsq6rcJ69Gx7NoYEN_4VIQ_Yj6bxwxf52Gxzwq5FRpujwDD2Yd6sZJzZpY9QMzXi2yXvxAJPrk6uv1Db2iNekumBv6bt0lJfnDEgi7LbBtVZsHb7IQl4-4bHWBhBX0NZymcVmdsRwAx1YTzk9CXidFnTJHJqGjKUWSmBR34Z2obQGTcOMIcZ_55tKTGx9lgR9DMaN3wLiYkNWc6W_ToObZgEtbwsiFzCtJe-4YL86bAivZTfHoM0ol6fn92NqF5YN2Ujq0U8rM21XFyhx4VPT7JcOxcjncQOdeZcr90xFfMb4elBQ-VTwUB3xHcoesceoxCmnV2n3PUSWBHdj4BsLYoTGSt-3m3rEmdphVybdC7FO-eh0BrGoMBJosQg1ts11tapN4Z72orJf2k8ZK6iA6dAf551eHzb-u2zllJGswdvPH0YjvG23eTTdpfYB3jnKLMOXutVfipEtaYhSkq-aKKAcbMRmnnkVSUvTh5TFnmoaluYLiAteAG8vQLM_vb_DJej0GLsTpCZg-Qhp2I3P98tnqyxeBb4Ypvuw-ulfEmtwq4OcDHB5A7PGCeem45dkj-ouuy6dVydtEgWGzP0txZxJqGNB2wvv7jXwFFJYNwbZUpf-XXzyZg
+                  status:
+                    type: integer
+                    example: 200
+        400:
+          description: 'auth  credentials mismatch'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'These credentials do not match our records.'
+                  status: 400
+                properties:
+                  message:
+                    type: string
+                    example: 'These credentials do not match our records.'
+                  status:
+                    type: integer
+                    example: 400
+      tags:
+        - 'Authentication Apis'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: email
+                  description: 'The email of the user.'
+                  example: rem
+                password:
+                  type: string
+                  description: 'The password of the user.'
+                  example: rerum
+                secret:
+                  type: string
+                  description: ''
+                  example: necessitatibus
+              required:
+                - email
+                - password
+                - secret
+      security: []
+  /api/account-verify:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'User accout verified Successfully'
+                  data:
+                    user:
+                      id: 22
+                      first_name: john
+                      last_name: arthor
+                      email: talha.hussain@eegamesstudio.com
+                      phone: null
+                      email_verified_at: null
+                      image: null
+                      user_role: 5
+                      status: 1
+                      otp: '94539'
+                      created_at: '2021-11-16T10:27:11.000000Z'
+                      updated_at: '2021-11-16T10:27:11.000000Z'
+                      deleted_at: null
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: 'User accout verified Successfully'
+                  data:
+                    type: object
+                    example:
+                      user:
+                        id: 22
+                        first_name: john
+                        last_name: arthor
+                        email: talha.hussain@eegamesstudio.com
+                        phone: null
+                        email_verified_at: null
+                        image: null
+                        user_role: 5
+                        status: 1
+                        otp: '94539'
+                        created_at: '2021-11-16T10:27:11.000000Z'
+                        updated_at: '2021-11-16T10:27:11.000000Z'
+                        deleted_at: null
+                  status:
+                    type: integer
+                    example: 200
+        400:
+          description: 'email validation'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Please fix the following error to continue'
+                  errors: 'The otp field is required.'
+                  status: 400
+                properties:
+                  message:
+                    type: string
+                    example: 'Please fix the following error to continue'
+                  errors:
+                    type: string
+                    example: 'The otp field is required.'
+                  status:
+                    type: integer
+                    example: 400
+      tags:
+        - 'Authentication Apis'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                otp:
+                  type: integer
+                  description: 'The otp of the user.'
+                  example: 16
+                secret:
+                  type: string
+                  description: ''
+                  example: dolorem
+              required:
+                - otp
+                - secret
+      security: []
+  /api/send-otp:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Otp has sended on your email kindly check your email'
+                  data:
+                    user:
+                      id: 22
+                      first_name: john
+                      last_name: arthor
+                      email: talha.hussain@eegamesstudio.com
+                      phone: null
+                      email_verified_at: null
+                      image: null
+                      user_role: 5
+                      status: 1
+                      otp: 66272
+                      created_at: '2021-11-16T10:27:11.000000Z'
+                      updated_at: '2021-11-16T11:52:42.000000Z'
+                      deleted_at: null
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: 'Otp has sended on your email kindly check your email'
+                  data:
+                    type: object
+                    example:
+                      user:
+                        id: 22
+                        first_name: john
+                        last_name: arthor
+                        email: talha.hussain@eegamesstudio.com
+                        phone: null
+                        email_verified_at: null
+                        image: null
+                        user_role: 5
+                        status: 1
+                        otp: 66272
+                        created_at: '2021-11-16T10:27:11.000000Z'
+                        updated_at: '2021-11-16T11:52:42.000000Z'
+                        deleted_at: null
+                  status:
+                    type: integer
+                    example: 200
+        400:
+          description: 'email verification'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'This email is not registered'
+                  status: 400
+                properties:
+                  message:
+                    type: string
+                    example: 'This email is not registered'
+                  status:
+                    type: integer
+                    example: 400
+      tags:
+        - 'Authentication Apis'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: email
+                  description: 'The email of the user.'
+                  example: ipsa
+                secret:
+                  type: string
+                  description: ''
+                  example: aut
+              required:
+                - email
+                - secret
+      security: []
+  /api/reset-password:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Your password has updated successfully'
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: 'Your password has updated successfully'
+                  status:
+                    type: integer
+                    example: 200
+        400:
+          description: 'password verification'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'This password is not registered'
+                  status: 400
+                properties:
+                  message:
+                    type: string
+                    example: 'This password is not registered'
+                  status:
+                    type: integer
+                    example: 400
+      tags:
+        - 'Authentication Apis'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                  description: 'The id of the user.'
+                  example: 8
+                password:
+                  type: string
+                  description: 'The password of the user.'
+                  example: et
+                secret:
+                  type: string
+                  description: ''
+                  example: molestiae
+              required:
+                - user_id
+                - password
+                - secret
+      security: []
+  /api/user-profile:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Your profile data is below'
+                  data:
+                    user:
+                      id: 22
+                      first_name: john
+                      last_name: arthor
+                      email: talha.hussain@eegamesstudio.com
+                      phone: null
+                      email_verified_at: null
+                      image: null
+                      user_role: 5
+                      status: 1
+                      otp: '66272'
+                      created_at: '2021-11-16T10:27:11.000000Z'
+                      updated_at: '2021-11-16T11:52:42.000000Z'
+                      deleted_at: null
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: 'Your profile data is below'
+                  data:
+                    type: object
+                    example:
+                      user:
+                        id: 22
+                        first_name: john
+                        last_name: arthor
+                        email: talha.hussain@eegamesstudio.com
+                        phone: null
+                        email_verified_at: null
+                        image: null
+                        user_role: 5
+                        status: 1
+                        otp: '66272'
+                        created_at: '2021-11-16T10:27:11.000000Z'
+                        updated_at: '2021-11-16T11:52:42.000000Z'
+                        deleted_at: null
+                  status:
+                    type: integer
+                    example: 200
+      tags:
+        - 'Authentication Apis'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                secret:
+                  type: string
+                  description: ''
+                  example: perferendis
+              required:
+                - secret
+      security: []
+  /api/logout:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Your have loged out successfully'
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: 'Your have loged out successfully'
+                  status:
+                    type: integer
+                    example: 200
+      tags:
+        - 'Authentication Apis'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                secret:
+                  type: string
+                  description: ''
+                  example: et
+              required:
+                - secret
+      security: []
+  /api/update-profile:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Your profile has updateds successfully'
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: 'Your profile has updateds successfully'
+                  status:
+                    type: integer
+                    example: 200
+        400:
+          description: 'password validation'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Please fix the following error to continue'
+                  errors: 'The password field is required.'
+                  status: 400
+                properties:
+                  message:
+                    type: string
+                    example: 'Please fix the following error to continue'
+                  errors:
+                    type: string
+                    example: 'The password field is required.'
+                  status:
+                    type: integer
+                    example: 400
+      tags:
+        - 'Authentication Apis'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                  description: 'The first_name of the user.'
+                  example: nihil
+                last_name:
+                  type: string
+                  description: 'The last_name of the user.'
+                  example: fuga
+                email:
+                  type: email
+                  description: 'The email of the user.'
+                  example: nihil
+                phone:
+                  type: string
+                  description: ''
+                  example: nam
+                password:
+                  type: string
+                  description: 'The password of the user.'
+                  example: architecto
+                secret:
+                  type: string
+                  description: ''
+                  example: porro
+              required:
+                - first_name
+                - last_name
+                - email
+                - phone
+                - password
+                - secret
+      security: []
+  /api/update-password:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Your password has updated successfully'
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: 'Your password has updated successfully'
+                  status:
+                    type: integer
+                    example: 200
+        400:
+          description: 'password verification'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'This password is not registered'
+                  status: 400
+                properties:
+                  message:
+                    type: string
+                    example: 'This password is not registered'
+                  status:
+                    type: integer
+                    example: 400
+      tags:
+        - 'Authentication Apis'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                  description: 'The id of the user.'
+                  example: 18
+                password:
+                  type: string
+                  description: 'The password of the user.'
+                  example: ut
+                secret:
+                  type: string
+                  description: ''
+                  example: dolorum
+              required:
+                - user_id
+                - password
+                - secret
+      security: []
+  /api/view-course:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'course details are bellow'
+                  data:
+                    courses:
+                      -
+                        course_id: 1
+                        course_category: 7
+                        title: 'this is title with fixed meta issue'
+                        type: 2
+                        price: 100
+                        overview: '11'
+                        summary: 'summary here'
+                        method: online
+                        lesson_duration: 12
+                        start_date: '2021-11-26'
+                        end_date: '2021-11-27'
+                        image: 1636704883.png
+                        tags: 'tag1,tag2'
+                        views: 0
+                        likes: 0
+                        address: null
+                        lat: null
+                        lng: null
+                        status: 4
+                        created_at: '2021-11-12T09:14:43.000000Z'
+                        updated_at: '2021-11-12T09:57:56.000000Z'
+                        deleted_at: null
+                        lesson_count: 0
+                      -
+                        course_id: 2
+                        course_category: 7
+                        title: 'this is title with fixed meta issues'
+                        type: 2
+                        price: 100
+                        overview: '11'
+                        summary: 'summary here'
+                        method: online
+                        lesson_duration: 12
+                        start_date: '2021-11-26'
+                        end_date: '2021-11-27'
+                        image: 1636704944.jpg
+                        tags: 'tag1,tag2'
+                        views: 0
+                        likes: 0
+                        address: 'Lahore, Pakistan'
+                        lat: '31.5203696'
+                        lng: '74.35874729999999'
+                        status: 4
+                        created_at: '2021-11-12T09:15:44.000000Z'
+                        updated_at: '2021-11-12T08:15:44.000000Z'
+                        deleted_at: null
+                        lesson_count: 0
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: 'course details are bellow'
+                  data:
+                    type: object
+                    example:
+                      courses:
+                        -
+                          course_id: 1
+                          course_category: 7
+                          title: 'this is title with fixed meta issue'
+                          type: 2
+                          price: 100
+                          overview: '11'
+                          summary: 'summary here'
+                          method: online
+                          lesson_duration: 12
+                          start_date: '2021-11-26'
+                          end_date: '2021-11-27'
+                          image: 1636704883.png
+                          tags: 'tag1,tag2'
+                          views: 0
+                          likes: 0
+                          address: null
+                          lat: null
+                          lng: null
+                          status: 4
+                          created_at: '2021-11-12T09:14:43.000000Z'
+                          updated_at: '2021-11-12T09:57:56.000000Z'
+                          deleted_at: null
+                          lesson_count: 0
+                        -
+                          course_id: 2
+                          course_category: 7
+                          title: 'this is title with fixed meta issues'
+                          type: 2
+                          price: 100
+                          overview: '11'
+                          summary: 'summary here'
+                          method: online
+                          lesson_duration: 12
+                          start_date: '2021-11-26'
+                          end_date: '2021-11-27'
+                          image: 1636704944.jpg
+                          tags: 'tag1,tag2'
+                          views: 0
+                          likes: 0
+                          address: 'Lahore, Pakistan'
+                          lat: '31.5203696'
+                          lng: '74.35874729999999'
+                          status: 4
+                          created_at: '2021-11-12T09:15:44.000000Z'
+                          updated_at: '2021-11-12T08:15:44.000000Z'
+                          deleted_at: null
+                          lesson_count: 0
+                  status:
+                    type: integer
+                    example: 200
+        400:
+          description: 'type validation'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error:
+                    lesson_id:
+                      - 'The type field is required.'
+                  status: 400
+                properties:
+                  error:
+                    type: object
+                    example:
+                      lesson_id:
+                        - 'The type field is required.'
+                  status:
+                    type: integer
+                    example: 400
+      tags:
+        - 'Course Apis'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  type: integer
+                  description: 'The type of the course.'
+                  example: 5
+                secret:
+                  type: string
+                  description: ''
+                  example: magnam
+              required:
+                - type
+                - secret
+      security: []
+  /api/course-details:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'course details are bellow'
+                  data:
+                    course:
+                      -
+                        id: 3
+                        title: 'this is online course'
+                        lesson_duration: 696
+                        type: 1
+                        method: In-class
+                        price: 513
+                        summary: 'Cumque cum praesenti'
+                        image: 1637075153.jpg
+                        views: 0
+                        likes: 0
+                        total_lesson: 1
+                        lessons:
+                          -
+                            lesson_id: 1
+                            course_id: 3
+                            title: '134'
+                            overview: 'Numquam minima non c'
+                            summary: 'Culpa velit laborio'
+                            video: 1637075218.mp4
+                            date: null
+                            start_time: null
+                            end_time: null
+                            qr_code: null
+                            qr_image: null
+                            created_at: '2021-11-16T16:06:58.000000Z'
+                            updated_at: '2021-11-16T16:06:58.000000Z'
+                            deleted_at: null
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: 'course details are bellow'
+                  data:
+                    type: object
+                    example:
+                      course:
+                        -
+                          id: 3
+                          title: 'this is online course'
+                          lesson_duration: 696
+                          type: 1
+                          method: In-class
+                          price: 513
+                          summary: 'Cumque cum praesenti'
+                          image: 1637075153.jpg
+                          views: 0
+                          likes: 0
+                          total_lesson: 1
+                          lessons:
+                            -
+                              lesson_id: 1
+                              course_id: 3
+                              title: '134'
+                              overview: 'Numquam minima non c'
+                              summary: 'Culpa velit laborio'
+                              video: 1637075218.mp4
+                              date: null
+                              start_time: null
+                              end_time: null
+                              qr_code: null
+                              qr_image: null
+                              created_at: '2021-11-16T16:06:58.000000Z'
+                              updated_at: '2021-11-16T16:06:58.000000Z'
+                              deleted_at: null
+                  status:
+                    type: integer
+                    example: 200
+        400:
+          description: 'course_id validation'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error:
+                    lesson_id:
+                      - 'The course id field is required.'
+                  status: 400
+                properties:
+                  error:
+                    type: object
+                    example:
+                      lesson_id:
+                        - 'The course id field is required.'
+                  status:
+                    type: integer
+                    example: 400
+      tags:
+        - 'Course Apis'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                course_id:
+                  type: integer
+                  description: 'The id of the course.'
+                  example: 10
+                secret:
+                  type: string
+                  description: ''
+                  example: aut
+              required:
+                - course_id
+                - secret
+      security: []
+  /api/lesson-details:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'lesson details are bellow'
+                  data:
+                    lesson:
+                      -
+                        lesson_id: 1
+                        title: '134'
+                        overview: 'Numquam minima non c'
+                        summary: 'Culpa velit laborio'
+                        video: 1637075218.mp4
+                        quiz:
+                          -
+                            quiz_id: 5
+                            image: 1635838486.png
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: 'lesson details are bellow'
+                  data:
+                    type: object
+                    example:
+                      lesson:
+                        -
+                          lesson_id: 1
+                          title: '134'
+                          overview: 'Numquam minima non c'
+                          summary: 'Culpa velit laborio'
+                          video: 1637075218.mp4
+                          quiz:
+                            -
+                              quiz_id: 5
+                              image: 1635838486.png
+                  status:
+                    type: integer
+                    example: 200
+        400:
+          description: 'lesson_id validation'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error:
+                    lesson_id:
+                      - 'The lesson id field is required.'
+                  status: 400
+                properties:
+                  error:
+                    type: object
+                    example:
+                      lesson_id:
+                        - 'The lesson id field is required.'
+                  status:
+                    type: integer
+                    example: 400
+      tags:
+        - 'Lesson Apis'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                lesson_id:
+                  type: integer
+                  description: 'The lesson_id of the lesson.'
+                  example: 17
+                secret:
+                  type: string
+                  description: ''
+                  example: libero
+              required:
+                - lesson_id
+                - secret
+      security: []
+  /api/view-posts:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'posts and categories bellow'
+                  data:
+                    types:
+                      -
+                        post_type_id: 5
+                        name: 'post type here'
+                        created_at: '2021-10-22T19:26:29.000000Z'
+                        updated_at: '2021-11-01T12:24:39.000000Z'
+                        deleted_at: null
+                    post:
+                      -
+                        post_id: 7
+                        title: 'Delectus nulla ipsa'
+                        description: 'Id exercitationem la'
+                        type: 5
+                        image: 1636622132.png
+                        status: 1
+                        tags: 'Tenetur voluptatem s'
+                        views: 0
+                        likes: 0
+                        created_at: '2021-11-11T10:15:32.000000Z'
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: 'posts and categories bellow'
+                  data:
+                    type: object
+                    example:
+                      types:
+                        -
+                          post_type_id: 5
+                          name: 'post type here'
+                          created_at: '2021-10-22T19:26:29.000000Z'
+                          updated_at: '2021-11-01T12:24:39.000000Z'
+                          deleted_at: null
+                      post:
+                        -
+                          post_id: 7
+                          title: 'Delectus nulla ipsa'
+                          description: 'Id exercitationem la'
+                          type: 5
+                          image: 1636622132.png
+                          status: 1
+                          tags: 'Tenetur voluptatem s'
+                          views: 0
+                          likes: 0
+                          created_at: '2021-11-11T10:15:32.000000Z'
+                  status:
+                    type: integer
+                    example: 200
+      tags:
+        - 'Post Apis'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                secret:
+                  type: string
+                  description: ''
+                  example: laudantium
+              required:
+                - secret
+      security: []
+  /api/post-details:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'post details is below'
+                  data:
+                    post:
+                      -
+                        id: 7
+                        author_id: 1
+                        title: 'Delectus nulla ipsa'
+                        description: 'Id exercitationem la'
+                        image: 1636622132.png
+                        likes: 0
+                        views: 0
+                        tags: 'Tenetur voluptatem s'
+                        name: 'post type here'
+                        images:
+                          -
+                            link: 3102076750.jpg
+                          -
+                            link: 3217966126.png
+                          -
+                            link: 3908092552.jpg
+                          -
+                            link: 6811210134.png
+                        user:
+                          '0':
+                            id: 1
+                            first_name: Admin
+                            last_name: Name
+                            image: 1635162482.png
+                            about: null
+                            facebook: null
+                            twitter: null
+                            instagram: null
+                            linkedin: null
+                          education:
+                            -
+                              id: 3
+                              year: '2021-10-23'
+                              details: 'some details here '
+                            -
+                              id: 4
+                              year: '2021-10-23'
+                              details: 'some details here '
+                          related_posts: []
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: 'post details is below'
+                  data:
+                    type: object
+                    example:
+                      post:
+                        -
+                          id: 7
+                          author_id: 1
+                          title: 'Delectus nulla ipsa'
+                          description: 'Id exercitationem la'
+                          image: 1636622132.png
+                          likes: 0
+                          views: 0
+                          tags: 'Tenetur voluptatem s'
+                          name: 'post type here'
+                          images:
+                            -
+                              link: 3102076750.jpg
+                            -
+                              link: 3217966126.png
+                            -
+                              link: 3908092552.jpg
+                            -
+                              link: 6811210134.png
+                          user:
+                            '0':
+                              id: 1
+                              first_name: Admin
+                              last_name: Name
+                              image: 1635162482.png
+                              about: null
+                              facebook: null
+                              twitter: null
+                              instagram: null
+                              linkedin: null
+                            education:
+                              -
+                                id: 3
+                                year: '2021-10-23'
+                                details: 'some details here '
+                              -
+                                id: 4
+                                year: '2021-10-23'
+                                details: 'some details here '
+                            related_posts: []
+                  status:
+                    type: integer
+                    example: 200
+        400:
+          description: 'post_id validation'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Please fix the following error to continue'
+                  errors: 'The post id field is required.'
+                  status: 400
+                properties:
+                  message:
+                    type: string
+                    example: 'Please fix the following error to continue'
+                  errors:
+                    type: string
+                    example: 'The post id field is required.'
+                  status:
+                    type: integer
+                    example: 400
+      tags:
+        - 'Post Apis'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                post_id:
+                  type: in
+                  description: 'The id of the post.'
+                  example: impedit
+                secret:
+                  type: string
+                  description: ''
+                  example: iste
+              required:
+                - post_id
+                - secret
+      security: []
+  /api/search-post:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Search results'
+                  data:
+                    post:
+                      -
+                        post_id: 7
+                        title: 'Delectus nulla ipsa'
+                        description: 'Id exercitationem la'
+                        type: 5
+                        image: 1636622132.png
+                        status: 1
+                        tags: 'Tenetur voluptatem s'
+                        views: 0
+                        likes: 0
+                        created_at: '2021-11-11T10:15:32.000000Z'
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: 'Search results'
+                  data:
+                    type: object
+                    example:
+                      post:
+                        -
+                          post_id: 7
+                          title: 'Delectus nulla ipsa'
+                          description: 'Id exercitationem la'
+                          type: 5
+                          image: 1636622132.png
+                          status: 1
+                          tags: 'Tenetur voluptatem s'
+                          views: 0
+                          likes: 0
+                          created_at: '2021-11-11T10:15:32.000000Z'
+                  status:
+                    type: integer
+                    example: 200
+        400:
+          description: 'title validation'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error:
+                    title:
+                      - 'The title field is required.'
+                  status: 400
+                properties:
+                  error:
+                    type: object
+                    example:
+                      title:
+                        - 'The title field is required.'
+                  status:
+                    type: integer
+                    example: 400
+      tags:
+        - 'Post Apis'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'The first_name of the user.'
+                  example: qui
+                secret:
+                  type: string
+                  description: ''
+                  example: nihil
+              required:
+                - title
+                - secret
+      security: []
+  /api/like-post:
+    post:
+      summary: ''
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: dislike
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'you have been disliked post'
+                  status: 200
+                properties:
+                  message:
+                    type: string
+                    example: 'you have been disliked post'
+                  status:
+                    type: integer
+                    example: 200
+        400:
+          description: 'post_id validation'
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Please fix the following error to continue'
+                  errors: 'The post id field is required.'
+                  status: 400
+                properties:
+                  message:
+                    type: string
+                    example: 'Please fix the following error to continue'
+                  errors:
+                    type: string
+                    example: 'The post id field is required.'
+                  status:
+                    type: integer
+                    example: 400
+      tags:
+        - 'Post Apis'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                  description: 'The first_name of the user.'
+                  example: 14
+                post_id:
+                  type: integer
+                  description: 'The last_name of the user.'
+                  example: 1
+                secret:
+                  type: string
+                  description: ''
+                  example: et
+              required:
+                - user_id
+                - post_id
+                - secret
+      security: []
+tags:
+  -
+    name: 'Protocol Apis'
+    description: "\nAPIs for managing Protocols"
+  -
+    name: 'Quiz Apis'
+    description: "\nAPIs for managing Quizs"
+  -
+    name: 'Authentication Apis'
+    description: "\nAPIs for managing users"
+  -
+    name: 'Course Apis'
+    description: "\nAPIs for managing Courses"
+  -
+    name: 'Lesson Apis'
+    description: "\nAPIs for managing Lessons"
+  -
+    name: 'Post Apis'
+    description: "\nAPIs for managing posts"

@@ -1,0 +1,115 @@
+name: 'Protocol Apis'
+description: |-
+
+  APIs for managing Protocols
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/get-protocols
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      secret:
+        name: secret
+        description: ''
+        required: true
+        example: sint
+        type: string
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "message": "protocols are listed below",
+          "data": {
+          "protocols": [
+          {
+          "protocol_id": 4,
+          "title": "Protocol for dentists updated",
+          "status": 1,
+          "created_at": "2021-11-09T17:32:48.000000Z"
+          },
+          {
+          "protocol_id": 6,
+          "title": "new protocol",
+          "status": 1,
+          "created_at": "2021-11-10T14:15:42.000000Z"
+          },
+          {
+          "protocol_id": 7,
+          "title": "This is new protocol for testing updated",
+          "status": 1,
+          "created_at": "2021-11-10T17:03:18.000000Z"
+          }
+          ]
+          },
+          "status": 200
+          }
+        headers: []
+        description: '200'
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/search-protocols
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      title:
+        name: title
+        description: ''
+        required: true
+        example: nulla
+        type: string
+      secret:
+        name: secret
+        description: ''
+        required: true
+        example: repellendus
+        type: string
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "message": "searched protocols are listed below",
+          "data": {
+          "protocols": [
+          {
+          "protocol_id": 4,
+          "title": "Protocol for dentists updated",
+          "status": 1,
+          "created_at": "2021-11-09T17:32:48.000000Z"
+          }
+          ]
+          },
+          "status": 200
+          }
+        headers: []
+        description: '200'
+      -
+        status: 400
+        content: |-
+          {
+          "message": "Please fix the following error to continue",
+          "errors": "The title field is required.",
+          "status": 400
+          }
+        headers: []
+        description: '400, title validation'
+    responseFields: []

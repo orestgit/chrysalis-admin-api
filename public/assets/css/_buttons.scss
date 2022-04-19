@@ -1,0 +1,244 @@
+@import './variables';
+// typography
+@mixin button {
+    font-family: "Poppins", sans-serif;
+    background: $color-theme;
+    border-radius: 15px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    border: 1px solid $color-theme;
+    padding: 10px 15px;
+    text-transform: capitalize
+}
+
+.btn-alert-success {
+    background-color: $color-green;
+    border: 1px solid $color-green;
+}
+
+.btn-alert-warn {
+    background-color: $color-warn;
+    border: 1px solid $color-warn;
+}
+
+.btn__theme {
+    @include button();
+    position: relative;
+    &:hover {
+        // background-color: $color-theme;
+        color: #fff;
+    }
+    &:focus {
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+.btn__transparent {
+    font-family: "Poppins", sans-serif;
+    color: $color-theme;
+    font-weight: 600;
+    font-size: 12px;
+    &:hover {
+        text-decoration: underline;
+        color: $color-black;
+    }
+}
+
+.btn__light {
+    border-color: $btn-bg-gray;
+    background-color: inherit;
+    color: $color-black;
+    &:hover {
+        color: $color-black;
+    }
+}
+
+.btn__with-icon {
+    background-color: $color-purple-light;
+    color: $color-theme;
+    border: 1px solid $btn-bg-gray;
+    padding-left: 30px;
+    &::before {
+        @include pseudo-style;
+        left: 8px;
+        background-image: url(../images/icons/arrow-left.svg);
+    }
+    &:hover {
+        // background-color: $color-theme;
+        color: $color-theme;
+    }
+}
+
+.btn__add {
+    padding-left: 30px;
+    padding-right: 30px;
+    &::before {
+        @include pseudo-style;
+        left: 8px;
+        background-image: url(../images/icons/add-icon.svg);
+    }
+}
+
+.btn__w100 { 
+    width: 100%;
+}
+
+.light-shadow {
+    width: 100%;
+}
+
+.btn-theme__pink {
+    background-color: $color-light-pink;
+    color: $color-pink;
+    border: 1px solid $color-light-pink;
+    &:hover {
+        color: $color-pink;
+    }
+}
+
+.social-links {
+    display: flex;
+    justify-content: flex-start;
+    .btn-edit-remove {
+        margin-bottom: 5px;
+        width: 140px;
+        margin: 15px;
+        margin-left: 0px;
+    }
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    &.lessons-button {
+        margin-top: 100px;
+    }
+    &.btn-edit {
+        float: right;
+        margin-top: auto;
+        margin-bottom: 0px;
+    }
+}
+
+// statuses
+span.badge {
+    padding: 6px 15px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 13px;
+    &.badge__success {
+        background-color: $color-green-light;
+        color: $color-green;
+    }
+    &.badge__pending {
+        background-color: $color-orange-light;
+        color: $color-orange;
+    }
+}
+
+// end
+@media (min-width: 280px) and (max-width: 575px) {
+    .card-inner__start {
+        .btn__theme-icon {
+            // min-width: 270px;
+        }
+        .btn__w100 {
+            // width: 270px;
+        }
+    }
+    .btn__theme {
+        font-size: 13px;
+        // padding: 11px 16px;
+        width: 220px;
+    }
+    .btn__transparent {
+        font-size: 12px;
+    }
+    .header-left {
+        .btn__with-icon {
+            &::before {
+                // left: 180px;
+                position: absolute;
+            }
+            &.btn__theme-icon {
+                &::before {
+                    // margin-left: -35px !important;
+                    // top: 27px;
+                    width: 17px;
+                    height: 17px;
+                }
+            }
+        }
+    }
+    .button-group {
+        .btn__theme {
+            width: unset;
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .header-left {
+        // padding-left: 0px;
+        .btn__with-icon {
+            &::before {
+                // left: 180px;
+                position: absolute;
+            }
+        }
+        .card-inner__end {
+            margin-left: 0px;
+        }
+    }
+    .btn__theme {
+        font-size: 14px;
+        // padding: 7px 10px;
+        width: 220px;
+    }
+    .btn__transparent {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .card-inner__start {
+        margin-left: 0px !important;
+        justify-content: center;
+        // text-align: center;
+        .btn__theme-icon {
+            // width: 260px;
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .card-inner__start {
+        margin-left: 0px !important;
+        .btn__theme-icon {
+            // width: 260px;
+        }
+    }
+    .card-inner__end {
+        .btn__theme {
+            // padding: 11px 11px;
+        }
+    }
+    .btn__theme {
+        // padding: 5px 11px;
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1350px) {
+    .card-inner__start {
+        margin-left: 0px !important;
+        .btn__theme-icon {
+            // width: 260px;
+        }
+    }
+}
+
+// Social Buttons Link ////

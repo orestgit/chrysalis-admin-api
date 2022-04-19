@@ -1,0 +1,387 @@
+name: 'Quiz Apis'
+description: |-
+
+  APIs for managing Quizs
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/get-quiz
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      quiz_id:
+        name: quiz_id
+        description: 'The id of the quiz.'
+        required: true
+        example: 2
+        type: integer
+      secret:
+        name: secret
+        description: ''
+        required: true
+        example: ullam
+        type: string
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "message": "quiz details is below",
+          "data": {
+          "quizs": [
+          {
+          "question_id": 46,
+          "quiz_id": 10,
+          "question": "Obcaecati ullam face",
+          "hint": "Magni ut commodo nat",
+          "type": 1,
+          "created_at": "2021-11-05T17:02:00.000000Z",
+          "updated_at": "2021-11-05T17:02:00.000000Z",
+          "deleted_at": null,
+          "options": [
+          {
+          "option_id": 114,
+          "question_id": 46,
+          "option": "Yes",
+          "is_correct": 1,
+          "created_at": "2021-11-05T17:02:00.000000Z",
+          "updated_at": "2021-11-05T17:02:00.000000Z",
+          "deleted_at": null
+          },
+          {
+          "option_id": 115,
+          "question_id": 46,
+          "option": "No",
+          "is_correct": 2,
+          "created_at": "2021-11-05T17:02:00.000000Z",
+          "updated_at": "2021-11-05T17:02:00.000000Z",
+          "deleted_at": null
+          }
+          ]
+          },
+          {
+          "question_id": 47,
+          "quiz_id": 10,
+          "question": "Pariatur Omnis volu",
+          "hint": "A voluptate repudian",
+          "type": 2,
+          "created_at": "2021-11-05T17:02:00.000000Z",
+          "updated_at": "2021-11-05T17:02:00.000000Z",
+          "deleted_at": null,
+          "options": [
+          {
+          "option_id": 116,
+          "question_id": 47,
+          "option": "Quia quidem proident",
+          "is_correct": 1,
+          "created_at": "2021-11-05T17:02:00.000000Z",
+          "updated_at": "2021-11-05T17:02:00.000000Z",
+          "deleted_at": null
+          },
+          {
+          "option_id": 117,
+          "question_id": 47,
+          "option": "Libero dolores reici",
+          "is_correct": 1,
+          "created_at": "2021-11-05T17:02:00.000000Z",
+          "updated_at": "2021-11-05T17:02:00.000000Z",
+          "deleted_at": null
+          },
+          {
+          "option_id": 118,
+          "question_id": 47,
+          "option": "Est expedita error q",
+          "is_correct": 1,
+          "created_at": "2021-11-05T17:02:00.000000Z",
+          "updated_at": "2021-11-05T17:02:00.000000Z",
+          "deleted_at": null
+          },
+          {
+          "option_id": 119,
+          "question_id": 47,
+          "option": "Quas et sunt quae re",
+          "is_correct": 1,
+          "created_at": "2021-11-05T17:02:00.000000Z",
+          "updated_at": "2021-11-05T17:02:00.000000Z",
+          "deleted_at": null
+          }
+          ]
+          },
+          {
+          "question_id": 48,
+          "quiz_id": 10,
+          "question": "Alias cillum veniam",
+          "hint": "Ad voluptatem eligen",
+          "type": 3,
+          "created_at": "2021-11-05T17:02:00.000000Z",
+          "updated_at": "2021-11-05T17:02:00.000000Z",
+          "deleted_at": null,
+          "options": [
+          {
+          "option_id": 120,
+          "question_id": 48,
+          "option": "Commodi beatae minus",
+          "is_correct": 2,
+          "created_at": "2021-11-05T17:02:00.000000Z",
+          "updated_at": "2021-11-05T17:02:00.000000Z",
+          "deleted_at": null
+          },
+          {
+          "option_id": 121,
+          "question_id": 48,
+          "option": "Impedit accusamus n",
+          "is_correct": 1,
+          "created_at": "2021-11-05T17:02:00.000000Z",
+          "updated_at": "2021-11-05T17:02:00.000000Z",
+          "deleted_at": null
+          },
+          {
+          "option_id": 122,
+          "question_id": 48,
+          "option": "Quisquam dolores fug",
+          "is_correct": 2,
+          "created_at": "2021-11-05T17:02:01.000000Z",
+          "updated_at": "2021-11-05T17:02:01.000000Z",
+          "deleted_at": null
+          },
+          {
+          "option_id": 123,
+          "question_id": 48,
+          "option": "Sed eligendi aliquid",
+          "is_correct": 2,
+          "created_at": "2021-11-05T17:02:01.000000Z",
+          "updated_at": "2021-11-05T17:02:01.000000Z",
+          "deleted_at": null
+          }
+          ]
+          },
+          {
+          "question_id": 49,
+          "quiz_id": 10,
+          "question": "Qui magni sunt dolor",
+          "hint": "Culpa qui ullam null",
+          "type": 4,
+          "created_at": "2021-11-05T17:02:01.000000Z",
+          "updated_at": "2021-11-05T17:02:01.000000Z",
+          "deleted_at": null,
+          "options": [
+          {
+          "option_id": 124,
+          "question_id": 49,
+          "option": "1294705576.jpg",
+          "is_correct": 1,
+          "created_at": "2021-11-05T17:02:01.000000Z",
+          "updated_at": "2021-11-05T17:02:01.000000Z",
+          "deleted_at": null
+          },
+          {
+          "option_id": 125,
+          "question_id": 49,
+          "option": "4606618650.png",
+          "is_correct": 2,
+          "created_at": "2021-11-05T17:02:01.000000Z",
+          "updated_at": "2021-11-05T17:02:01.000000Z",
+          "deleted_at": null
+          },
+          {
+          "option_id": 126,
+          "question_id": 49,
+          "option": "3067659607.jpg",
+          "is_correct": 2,
+          "created_at": "2021-11-05T17:02:01.000000Z",
+          "updated_at": "2021-11-05T17:02:01.000000Z",
+          "deleted_at": null
+          },
+          {
+          "option_id": 127,
+          "question_id": 49,
+          "option": "3042335406.png",
+          "is_correct": 2,
+          "created_at": "2021-11-05T17:02:01.000000Z",
+          "updated_at": "2021-11-05T17:02:01.000000Z",
+          "deleted_at": null
+          }
+          ]
+          }
+          ]
+          },
+          "status": 200
+          }
+        headers: []
+        description: '200'
+      -
+        status: 400
+        content: |-
+          {
+          "message": "Please fix the following error to continue",
+          "errors": "The quiz id field is required.",
+          "status": 400
+          }
+        headers: []
+        description: '400, quiz_id validation'
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/attempt-quiz
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      option_id:
+        name: option_id
+        description: 'The id of the option.'
+        required: true
+        example: 17
+        type: integer
+      question_id:
+        name: question_id
+        description: 'The id of the question.'
+        required: true
+        example: 16
+        type: integer
+      user_id:
+        name: user_id
+        description: 'The id of the user.'
+        required: true
+        example:
+          - qui
+        type: 'string[]'
+      secret:
+        name: secret
+        description: ''
+        required: true
+        example: occaecati
+        type: string
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "message": "Your answer for this question has been saved",
+          "status": 200
+          }
+        headers: []
+        description: '200'
+      -
+        status: 400
+        content: |-
+          {
+          "message": "Please fix the following error to continue",
+          "errors": "The question id field is required.",
+          "status": 400
+          }
+        headers: []
+        description: '400, question_id validation'
+      -
+        status: 400
+        content: |-
+          {
+          "message": "Please fix the following error to continue",
+          "errors": "The question id field is required.",
+          "status": 400
+          }
+        headers: []
+        description: '400, option_id validation'
+      -
+        status: 400
+        content: |-
+          {
+          "message": "Please fix the following error to continue",
+          "errors": "The user id field is required.",
+          "status": 400
+          }
+        headers: []
+        description: '400, user_id validation'
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/get-quiz-result
+    metadata:
+      title: ''
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      quiz_id:
+        name: quiz_id
+        description: ''
+        required: true
+        example: perspiciatis
+        type: string
+      user_id:
+        name: user_id
+        description: 'The id of the user.'
+        required: true
+        example:
+          - labore
+        type: 'string[]'
+      option_id:
+        name: option_id
+        description: 'The id of the option.'
+        required: true
+        example: 15
+        type: integer
+      question_id:
+        name: question_id
+        description: 'The id of the question.'
+        required: true
+        example: 13
+        type: integer
+      secret:
+        name: secret
+        description: ''
+        required: true
+        example: et
+        type: string
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+          "message": "Your quiz submited successfully",
+          "score": 0,
+          "status": 200
+          }
+        headers: []
+        description: '200'
+      -
+        status: 400
+        content: |-
+          {
+          "message": "Please fix the following error to continue",
+          "errors": "The quiz id field is required.",
+          "status": 400
+          }
+        headers: []
+        description: '400, quiz_id validation'
+      -
+        status: 400
+        content: |-
+          {
+          "message": "Please fix the following error to continue",
+          "errors": "The user id field is required.",
+          "status": 400
+          }
+        headers: []
+        description: '400, user_id validation'
+    responseFields: []

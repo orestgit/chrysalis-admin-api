@@ -1,0 +1,197 @@
+// charts
+// line 
+#dashboard-posts-chart,
+#dashboard-courses-chart {
+    // min-height: 100px;
+}
+
+.apexcharts-toolbar {
+    opacity: 0 !important;
+}
+
+#dashboard-donut-chart-license-text {
+    display: none;
+}
+
+#myChart-license-text {
+    display: none;
+}
+
+.section-smooth-chart {
+    padding: 20px;
+}
+
+.graph-bar-charts {
+    margin-bottom: 20px;
+}
+
+.chart--container-edit {
+    #myChart-wrapper {
+        top: -90px;
+        height: 300px !important;
+    }
+}
+
+#dashboard-earning-bar-chart-license-text {
+    opacity: 0!important;
+}
+
+#dashboard-earning-bar-chart {
+    height: 370px;
+    width: 100%;
+    border-radius: 16px;
+}
+
+#donutChart-license-text {
+    display: none !important;
+}
+
+#dashboard-earning-bar-chart-wrapper {
+    margin: 0px 0px;
+}
+
+.tools {
+    background-color: red;
+}
+
+.tools {
+    box-shadow: rgba(0, 0, 0, 0.14) 0 2px 4px 0;
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    background: $color-black;
+    // color: #fff;
+    // font-weight: 600;
+    // font-size: 25px;
+    height: 50px;
+    width: 100px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tools:after {
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin-left: -0.32em;
+    bottom: -0.54em;
+    left: 50%;
+    border-style: solid;
+    border-width: 0.32em;
+    border-color: $color-black $color-black $color-black $color-black;
+    transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform: rotate(-45deg) skew(-15deg, -15deg);
+    -ms-transform: rotate(-45deg) skew(-15deg, -15deg);
+    -webkit-transform: rotate(-45deg) skew(-15deg, -15deg);
+}
+
+.tools:before {
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin-left: -0.4em;
+    bottom: -0.7em;
+    left: 50%;
+    border-style: solid;
+    border-width: 0.4em;
+    border-color: $color-black $color-black $color-black $color-black;
+    transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    transform: rotate(-45deg) skew(-15deg, -15deg);
+    -ms-transform: rotate(-45deg) skew(-15deg, -15deg);
+    -webkit-transform: rotate(-45deg) skew(-15deg, -15deg);
+    box-shadow: rgba(0, 0, 0, 0.14) 0 2px 4px 0;
+    z-index: -1;
+}
+
+// .tooltip--tiny:after {
+//     content: " ";
+//     position: absolute;
+//     width: 0;
+//     height: 0;
+//     margin-left: -0.32em;
+//     bottom: -0.54em;
+//     left: 50%;
+//     border-style: solid;
+//     border-width: 0.32em;
+//     border-color: #fff #fff #fff #fff;
+//     transform-origin: 0 0;
+//     -ms-transform-origin: 0 0;
+//     -webkit-transform-origin: 0 0;
+//     transform: rotate(-45deg) skew(-15deg,-15deg);
+//     -ms-transform: rotate(-45deg) skew(-15deg,-15deg);
+//     -webkit-transform: rotate(-45deg) skew(-15deg,-15deg);
+// }
+// .tooltip--tiny:before {
+//     content: " ";
+//     position: absolute;
+//     width: 0;
+//     height: 0;
+//     margin-left: -0.4em;
+//     bottom: -0.7em;
+//     left: 50%;
+//     border-style: solid;
+//     border-width: 0.4em;
+//     border-color: #fff #fff #c9cec8 #c9cec8;
+//     transform-origin: 0 0;
+//     -ms-transform-origin: 0 0;
+//     -webkit-transform-origin: 0 0;
+//     transform: rotate(-45deg) skew(-15deg,-15deg);
+//     -ms-transform: rotate(-45deg) skew(-15deg,-15deg);
+//     -webkit-transform: rotate(-45deg) skew(-15deg,-15deg);
+//     box-shadow: rgba(0,0,0,0.14) 0 2px 4px 0;
+//     z-index: -1;
+// }
+@media (min-width: 768px) and (max-width: 991px) {
+    #dashboard-earning-bar-chart-wrapper {
+        margin: 0px 0px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    #dashboard-earning-bar-chart-wrapper {
+        margin: 0px 0px;
+    }
+}
+
+// extra queries ////
+@media (min-width: 300px) and (max-width: 1200px) {
+    .server-bar-graph {
+        &.graph-bar-section {
+            display: block !important;
+            text-align: center;
+            ul {
+                li {
+                    margin: 10px;
+                }
+            }
+            .donut-charts {
+                .chart--container {
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1300px) {
+    .server-bar-graph {
+        &.zc-body {
+            &.graph-bar-section {
+                .donut-charts {
+                    .chart--container {
+                        width: 120px !important;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,302 @@
+// table
+@import './variables';
+@mixin table-border-theme {
+    border-bottom: 1px solid $color-border-table;
+    border-top: none;
+}
+
+@mixin table-padding {
+    padding: 0.7rem 1.3rem;
+}
+
+@mixin table-header-padding {
+    padding: 0rem 1.3rem;
+}
+
+@mixin table-heading {
+    font-size: 14px;
+    color: $color-grey-mid;
+    font-weight: 400;
+}
+
+@mixin table-data-basic {
+    font-size: 13px;
+    color: $color-black;
+    font-weight: 500;
+    vertical-align: middle
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.color-red {
+    color: $color-red !important;
+}
+
+// th {
+//     position: sticky;
+//     top: 0px;
+// }
+.table-container {
+    margin-bottom: 10px;
+    .table-header {
+        @include table-header-padding();
+    }
+    table {
+        // table-layout: fixed;
+        &.table-variable {
+            tbody {
+                td {
+                    // width: 100%;
+                    width: auto;
+                    &:first-of-type {
+                        width: 210px;
+                    }
+                }
+                tr {
+                    td {}
+                }
+            }
+        }
+        thead {
+            th {
+                @include table-padding();
+                @include table-border-theme();
+                @include table-heading();
+            }
+        }
+        tbody {
+            td {
+                @include table-padding();
+                @include table-border-theme();
+                @include table-data-basic();
+                &:first-of-type {
+                    width: 100%;
+                }
+                h4.h4 {
+                    color: $color-green;
+                    margin-top: 5px;
+                }
+                .table-chat-notifications {
+                    position: relative;
+                    ul {
+                        li {
+                            display: block;
+                            a {
+                                span {
+                                    &.count {
+                                        position: absolute;
+                                        /* margin-top: 10px; */
+                                        line-height: normal;
+                                        right: 56px;
+                                        font-size: 13.09524px;
+                                        font-weight: 600;
+                                        color: #fff;
+                                        width: 12px;
+                                        height: 12px;
+                                        border-radius: 5.33333px;
+                                        border-radius: 50%;
+                                        &.chat {
+                                            background-color: $color-theme-red;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.tbody-tdetail {
+            thead {
+                th {}
+            }
+            tbody {
+                tr {
+                    height: 65px;
+                    td {
+                        &:first-of-type {
+                            width: unset;
+                        }
+                        h4.h4 {
+                            color: $color-green;
+                            margin-top: 5px;
+                        }
+                    }
+                }
+            }
+        }
+        &.table-add-action {
+            thead {
+                th {
+                    border-left: 5px solid $crd-color-white;
+                }
+            }
+            label {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                padding-left: 25px;
+                margin-right: 10px;
+                margin-bottom: 0px;
+                &:before {
+                    content: "";
+                    width: 18px;
+                    height: 18px;
+                    position: absolute;
+                    left: -8px;
+                    margin-top: -14px !important;
+                }
+            }
+            input[type=checkbox] {
+                display: none;
+                &:checked {
+                    + {
+                        label {
+                            &:before {
+                                background: url('../images/icons/check-mark.svg') left center no-repeat;
+                                margin-top: 0px;
+                                background-size: contain;
+                            }
+                        }
+                    }
+                }
+            }
+            .checkbox {
+                label {
+                    &:before {
+                        background: url('../images/icons/uncheck-mark.svg') left center no-repeat;
+                        margin-top: 0px;
+                        background-size: contain;
+                    }
+                }
+            }
+            tbody {
+                tr {
+                    border-left: 5px solid $crd-color-white;
+                    &:hover {
+                        box-shadow: 0 6px 20px 0px $color-shadow-gray;
+                        border-left: 5px solid $color-theme;
+                    }
+                    &.active {
+                        box-shadow: 0 6px 20px 0px $color-shadow-gray;
+                        border-left: 5px solid $color-theme;
+                    }
+                    td {
+                        span {
+                            background-color: $color-green-light;
+                            color: $color-green;
+                            padding: 6px 15px;
+                            border-radius: 10px;
+                            &.status-theme-change {
+                                background-color: $color-orange-light !important;
+                                color: $color-orange !important;
+                            }
+                        }
+                    }
+                }
+            }
+            &.table-action-md {
+                thead {
+                    th {
+                        border-left: none;
+                    }
+                }
+                tbody {
+                    tr {
+                        border-left: none;
+                        &:hover {
+                            box-shadow: none;
+                            border-left: none;
+                        }
+                        &.active {
+                            box-shadow: none;
+                            border-left: none;
+                        }
+                    }
+                }
+            }
+        }
+        &.table__md {}
+    }
+    &.table-container-fixed {
+        overflow: auto;
+        max-height: 473px;
+        height: 100%;
+    }
+}
+
+@media (min-width: 280px) and (max-width: 575px) {
+    .w-30 {
+        width: 30% !important;
+    }
+    .table-container {
+        margin-bottom: 0px;
+        table {
+            thead {
+                th {
+                    font-size: 13px;
+                }
+            }
+            tbody {
+                td {
+                    padding: 0.4rem 1.3rem;
+                    font-size: 12px;
+                    min-width: 230px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .table-container {
+        margin-bottom: 0px;
+        table {
+            thead {
+                th {}
+            }
+            tbody {
+                td {
+                    padding: 0.6rem 1.3rem;
+                    min-width: 235px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .table-container {
+        margin-bottom: 0px;
+        table {
+            thead {
+                th {}
+            }
+            tbody {
+                td {
+                    min-width: 235px !important;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .table-container {
+        margin-bottom: 0px;
+        table {
+            thead {
+                th {}
+            }
+            tbody {
+                td {}
+            }
+        }
+    }
+}

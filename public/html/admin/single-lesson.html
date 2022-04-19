@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="import" href="component.html" />
+    <title>Chrysalis</title>
+
+    <!-- font family -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <!-- normalize -->
+    <link rel="stylesheet" href="../../assets/css/normalize.css" />
+    <link href='../../assets/css/calendar.css' rel='stylesheet' />
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../assets/css/nice-select.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="../../assets/css/richtext.min.css">
+    <link rel="stylesheet" href="../../assets/css/basic.css">
+    <link rel="stylesheet" href="../../assets/css/dropzone.css">
+    <!-- css -->
+    <link rel="stylesheet" href="../../assets/css/index.css" />
+    <link rel="stylesheet" href="../../assets/css/sidebar.css" />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="stylesheet" href="../../assets/css/responsive.css" />
+    <!-- jquery -->
+    <script src="../../assets/js/jquery.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- bootstrap js -->
+    <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+    <!-- plugins -->
+    <script src="../../assets/js/jquery.richtext.js"></script>
+    <script src="../../assets/js/dropzone.js"></script>
+    <script src="../../assets/js/single-img-picker.js"></script>
+    <!-- apex charts -->
+    <script src="../../assets/js/apex-charts.js"></script>
+    <script src="../../assets/js/apex-custom.js"></script>
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script src='../../assets/js/calendar.js'></script>
+    <script src="../../assets/js/jquery.nice-select.js"></script>
+    <script src="../../assets/js/bootstrap-tagsinput.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+    <!-- plugins end -->
+    <!-- js -->
+    <script src="../../assets/js/main.js"></script>
+</head>
+
+<body>
+    <!-- body wrapper -->
+    <div id="main">
+        <!-- sidebar -->
+        <div class="sidebar-container">
+            <nav class="navbar navbar-expand navbar-light">
+                <span class="menu-icon">
+                    <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+                </span>
+
+                <a class="navbar-brand" href="./index.html">
+                    <img class="logo img-responsive" src="../../assets/images/logo.png" alt="chrysalis" srcset="" />
+                </a>
+            </nav>
+            <div class="clearfix"></div>
+
+            <div class="sidebar">
+                <div class="container-fluid h-100">
+                    <div class="row h-100">
+                        <div class="col-12 px-0 h-100">
+                            <div class="sidebar-accordian h-100">
+                                <div class="side-menus-list">
+                                    <!-- Contenedor -->
+                                    <ul id="accordion" class=" accordion">
+                                        <li class="sidebar-menu ">
+                                            <a class="link text-16 text-light-pink" href="./index.html">
+                                                <span class="svg-block">
+                                                    <svg class="svg-icon" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path class="admin-icon-color"
+                                                            d="M23.6996 11.7189C24.1346 11.2404 24.0926 10.5071 23.6058 10.0813L12.8799 0.696113C12.393 0.270365 11.6125 0.279284 11.1359 0.716219L0.373512 10.5817C-0.103087 11.0186 -0.126479 11.7511 0.321721 12.2169L0.591549 12.498C1.0392 12.9638 1.76278 13.0194 2.20668 12.6216L3.011 11.9014V22.4466C3.011 23.0936 3.53524 23.6174 4.18177 23.6174H8.37696C9.02349 23.6174 9.54773 23.0936 9.54773 22.4466V15.0692H14.8987V22.4466C14.8894 23.0931 15.352 23.6169 15.9986 23.6169H20.4444C21.0909 23.6169 21.6152 23.0931 21.6152 22.4461V12.0498C21.6152 12.0498 21.8374 12.2445 22.1114 12.4854C22.385 12.7258 22.9596 12.533 23.3947 12.0541L23.6996 11.7189Z"
+                                                            fill="#B3B3B3" />
+                                                    </svg>
+
+                                                </span> Dashboard
+                                            </a>
+                                        </li>
+
+
+                                        <li class="sidebar-menu ">
+                                            <a href="./admin-posts.html" class="link text-16 text-light-pink">
+                                                <span class="svg-block">
+                                                    <svg class="svg-icon" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <mask id="path-1-inside-1" fill="white">
+                                                            <rect x="0.000244141" width="24" height="16" rx="1" />
+                                                        </mask>
+                                                        <rect class="admin-icon-color" x="0.000244141" width="24"
+                                                            height="16" rx="1" stroke="#B3B3B3" stroke-width="4"
+                                                            mask="url(#path-1-inside-1)" />
+                                                        <mask id="path-2-inside-2" fill="white">
+                                                            <rect x="0.000244141" y="18" width="24" height="6" rx="1" />
+                                                        </mask>
+                                                        <rect class="admin-icon-color" x="0.000244141" y="18" width="24"
+                                                            height="6" rx="1" stroke="#B3B3B3" stroke-width="4"
+                                                            mask="url(#path-2-inside-2)" />
+                                                    </svg>
+
+
+                                                </span> Posts
+                                            </a>
+                                        </li>
+                                        <li class="sidebar-menu admin-dashboard-active">
+                                            <a href="./admin-lessons.html" class="link text-16 text-light-pink">
+                                                <span class="svg-block">
+                                                    <svg class="svg-icon" viewBox="0 0 26 24" fill="none">
+                                                        <g class="admin-icon-color" opacity="0.3">
+                                                            <path class="admin-icon-color"
+                                                                d="M26.0002 0.489502H15.0315C14.2317 0.489502 13.5099 0.827959 13.0002 1.36853C12.4906 0.827959 11.7688 0.489502 10.969 0.489502H0.000244141V18.8046H5.83872C7.03979 21.5707 9.79757 23.5104 13.0002 23.5104C16.2029 23.5104 18.9607 21.5707 20.1618 18.8046H26.0002V0.489502ZM24.4768 17.2812H20.644C20.7486 16.7726 20.8036 16.2461 20.8036 15.707C20.8036 15.0957 20.7328 14.5008 20.5993 13.9296H22.3694V12.4062H20.07C19.7771 11.7812 19.4037 11.2013 18.9632 10.6796H22.3694V9.15618H17.2358C16.2162 8.49466 15.0333 8.06459 13.762 7.94084V3.28247C13.762 2.58245 14.3315 2.01294 15.0315 2.01294H24.4768V17.2812ZM13.0002 21.9869C9.53747 21.9869 6.72028 19.1697 6.72028 15.707C6.72028 12.2442 9.53747 9.427 13.0002 9.427C16.463 9.427 19.2802 12.2442 19.2802 15.707C19.2802 19.1697 16.463 21.9869 13.0002 21.9869ZM1.52368 2.01294H10.969C11.669 2.01294 12.2385 2.58245 12.2385 3.28247V7.94079C10.9672 8.06454 9.78427 8.49461 8.76463 9.15613H3.6311V10.6796H7.03726C6.59678 11.2012 6.22338 11.7812 5.93043 12.4061H3.6311V13.9296H5.40124C5.26768 14.5007 5.19684 15.0957 5.19684 15.7069C5.19684 16.246 5.25184 16.7725 5.35645 17.2811H1.52368V2.01294Z"
+                                                                fill="black" />
+                                                            <path class="admin-icon-color"
+                                                                d="M3.6311 5.90625H10.1311V7.42969H3.6311V5.90625Z"
+                                                                fill="black" />
+                                                            <path class="admin-icon-color"
+                                                                d="M15.8694 5.90625H22.3694V7.42969H15.8694V5.90625Z"
+                                                                fill="black" />
+                                                            <path class="admin-icon-color"
+                                                                d="M16.6309 16.3666V15.0473L11.3547 12.0011L10.2122 12.6607V18.7531L11.3547 19.4128L16.6309 16.3666ZM11.7356 13.9801L14.7266 15.707L11.7356 17.4338V13.9801Z"
+                                                                fill="black" />
+                                                        </g>
+                                                    </svg>
+                                                </span> Courses
+                                            </a>
+                                        </li>
+                                        <li class="sidebar-menu">
+                                            <a href="./setting.html" class="link text-16 text-light-pink">
+                                                <span class="svg-block">
+                                                    <svg class="svg-icon" viewBox="0 0 24 24" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <g class="admin-icon-color" opacity="0.3"
+                                                            clip-path="url(#clip0)">
+                                                            <path class="admin-icon-color"
+                                                                d="M12.015 7C9.25793 7 7.01489 9.24304 7.01489 12.0001C7.01489 14.7571 9.25793 17.0001 12.015 17.0001C14.7718 17.0001 17.0148 14.7571 17.0148 12.0001C17.0148 9.24304 14.7718 7 12.015 7ZM12.015 15.5001C10.0848 15.5001 8.51489 13.93 8.51489 12.0001C8.51489 10.0701 10.0848 8.5 12.015 8.5C13.9449 8.5 15.5148 10.0701 15.5148 12.0001C15.5148 13.93 13.9449 15.5001 12.015 15.5001Z"
+                                                                fill="black" />
+                                                            <path class="admin-icon-color"
+                                                                d="M13.6783 0H10.3522C9.5522 0 8.84523 0.567993 8.67128 1.35095L8.25032 3.22302C7.56422 3.51398 6.91017 3.89392 6.29622 4.35791L4.47322 3.78204C3.69117 3.53906 2.8412 3.87103 2.44917 4.57104L0.791334 7.43793C0.394178 8.14801 0.528211 9.02197 1.11232 9.57202L2.52516 10.871C2.48231 11.252 2.46126 11.6299 2.46126 12C2.46126 12.3701 2.48231 12.748 2.52424 13.129L1.11928 14.4219C0.528211 14.978 0.393262 15.852 0.786207 16.5529L2.4543 19.4379C2.8412 20.1301 3.69319 20.4589 4.47029 20.22L6.29622 19.643C6.91017 20.107 7.56422 20.4869 8.25032 20.7781L8.67219 22.652C8.84523 23.432 9.5522 24 10.3522 24H13.6783C14.4783 24 15.1853 23.432 15.3592 22.649L15.7802 20.777C16.4663 20.486 17.1203 20.1061 17.7343 19.6421L19.5573 20.218C20.3413 20.4589 21.1893 20.129 21.5813 19.429L23.2393 16.5621C23.6363 15.852 23.5023 14.978 22.9182 14.428L21.5053 13.129C21.5473 12.748 21.5683 12.369 21.5683 12C21.5683 11.631 21.5473 11.252 21.5053 10.871L22.9112 9.57898C22.9132 9.57697 22.9152 9.57495 22.9182 9.57294C23.5023 9.02307 23.6372 8.14893 23.2443 7.448L21.5762 4.56299C21.1893 3.87103 20.3393 3.53998 19.5593 3.78204L17.7332 4.35901C17.1192 3.89502 16.4652 3.51508 15.7792 3.22394L15.3572 1.35004C15.1853 0.567993 14.4783 0 13.6783 0ZM6.44929 5.94104C6.62123 5.94104 6.79023 5.88208 6.92628 5.77002C7.61329 5.20496 8.36219 4.76898 9.15522 4.47693C9.39418 4.38904 9.57124 4.18597 9.62727 3.93805L10.1363 1.67798C10.1592 1.57397 10.2502 1.5 10.3533 1.5H13.6792C13.7823 1.5 13.8733 1.57397 13.8953 1.67596L14.4052 3.93805C14.4613 4.18597 14.6383 4.38904 14.8773 4.47693C15.6692 4.76898 16.4192 5.20496 17.1062 5.77002C17.3023 5.93207 17.5662 5.98407 17.8093 5.90698L20.0103 5.21191C20.1152 5.17896 20.2272 5.21796 20.2752 5.30402L21.9433 8.18903C21.9933 8.27802 21.9752 8.39996 21.8953 8.47797L20.2073 10.03C20.0242 10.1981 19.9363 10.4471 19.9733 10.693C20.0392 11.1359 20.0723 11.5759 20.0723 12.0009C20.0723 12.4261 20.0392 12.8661 19.9733 13.309C19.9363 13.5549 20.0242 13.803 20.2073 13.972L21.8992 15.5281C21.9752 15.5989 21.9933 15.7231 21.9382 15.822L20.2802 18.689C20.2263 18.7841 20.1123 18.822 20.0082 18.789L17.8103 18.095C17.5682 18.0179 17.3043 18.0699 17.1073 18.232C16.4203 18.7971 15.6712 19.233 14.8782 19.5251C14.6392 19.613 14.4622 19.816 14.4063 20.064L13.8973 22.324C13.8722 22.426 13.7812 22.5 13.6783 22.5H10.3522C10.2493 22.5 10.1583 22.426 10.1363 22.324L9.62617 20.062C9.57032 19.814 9.39326 19.6121 9.15431 19.5231C8.36219 19.231 7.61219 18.795 6.92628 18.23C6.72926 18.0679 6.46321 18.017 6.22334 18.093L4.02223 18.7881C3.91932 18.8199 3.80525 18.782 3.75728 18.696L2.08918 15.8121C2.0392 15.722 2.05732 15.598 2.14027 15.52L3.82631 13.9709C4.00923 13.803 4.0973 13.554 4.06032 13.3079C3.99421 12.865 3.96126 12.425 3.96126 12C3.96126 11.575 3.99421 11.135 4.06032 10.6921C4.0973 10.446 4.00923 10.1981 3.82631 10.0291L2.13423 8.47302C2.05824 8.40198 2.0403 8.27802 2.09523 8.17896L3.75325 5.31207C3.80616 5.21704 3.92024 5.18005 4.02516 5.21191L6.22334 5.90607C6.29731 5.93005 6.3733 5.94104 6.44929 5.94104Z"
+                                                                fill="black" />
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0">
+                                                                <rect width="24" height="24" fill="white"
+                                                                    transform="matrix(1 0 0 -1 0.000244141 24)" />
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+
+
+                                                </span> Settings
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- <div class="mt-auto mx-3 ">
+                    <p class="footer-text pt-3">All rights reserved<br>© 2020 </p>
+                </div> -->
+
+            </div>
+        </div>
+        <!-- sidebar end -->
+
+        <!-- main -->
+        <div class="container-fluid main-container">
+            <!-- header -->
+            <div class="row align-items-center align-items--xs">
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-4 col-xl-3 header-column--xs">
+                    <div class="header-left header-left-back header-left--sm">
+                        <a href="./single-course.html" class="btn btn__theme  btn__with-icon btn-theme--">
+                            Back
+                        </a>
+                    </div>
+                </div>
+                <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-8 col-xl-9 header-column--xs">
+                    <div class="header-right header-right--sm">
+                        <ul>
+
+                            <li>
+                                <a class="icon-button">
+                                    <img src="../../assets/images/icons/chat.svg" alt="" srcset="">
+                                    <span class="count chat">
+                                        11
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="icon-button">
+                                    <img src="../../assets/images/icons/notifiction.svg" alt="" srcset="">
+                                    <span class="count notification">
+                                        2
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="user-button">
+                                    <img src="../../assets/images/others/user-placeholder.png" alt="" srcset="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- end -->
+
+            <!-- bottom main -->
+            <div class="row wrapper-space-top">
+                <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-8">
+                    <div class="main-left-container">
+                        <section>
+                            <div class="card">
+                                <div class="card-container p-0">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-12 col-lg-12 px-0">
+
+                                                <div class="section-header section-lessons-md">
+                                                    <div class="section-header__title header-left--sm">
+                                                        <h3 class="h3">
+                                                            Lesson Title Goes Here
+                                                        </h3>
+                                                    </div>
+                                                    <div class="section-header__controls tab-head-container header-tabs--sm">
+                                                        <ul class="theme-tabs">
+                                                            <li class="theme-tab-item current" data-tab="tab-1">
+                                                                1
+                                                            </li>
+
+                                                            <li class="theme-tab-item" data-tab="tab-2">
+                                                                2
+                                                            </li>
+                                                            <li class="theme-tab-item" data-tab="tab-3">
+                                                                3
+                                                            </li>
+                                                            <li class="theme-tab-item" data-tab="tab-4">
+                                                                4
+                                                            </li>
+                                                            <li class="theme-tab-item" data-tab="tab-5">
+                                                                Add Chapter
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                                <div class="section-content inline-content">
+                                                    <div id="tab-1" class="theme-tab-content current">
+                                                        <div class="text-editor-continer">
+                                                            <textarea class="text-editor" name="example" placeholder="Write your post text here">Write your lesson text here, add images, videos and files</textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div id="tab-2" class="theme-tab-content">
+                                                        <div class="text-editor-continer">
+                                                            <textarea class="text-editor" name="example" placeholder="Write your post text here">Write your lesson text here, add images, videos and files</textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div id="tab-3" class="theme-tab-content">
+                                                        <div class="text-editor-continer">
+                                                            <textarea class="text-editor" name="example" placeholder="Write your post text here">Write your lesson text here, add images, videos and files</textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div id="tab-4" class="theme-tab-content">
+                                                        <div class="text-editor-continer">
+                                                            <textarea class="text-editor" name="example" placeholder="Write your post text here">Write your lesson text here, add images, videos and files</textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div id="tab-5" class="theme-tab-content">
+                                                        <div class="text-editor-continer">
+                                                            <textarea class="text-editor" name="example" placeholder="Write your post text here">Write your lesson text here, add images, videos and files</textarea>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+                <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
+                    <div class="main-right-container main-p-0 p-0">
+                        <section>
+                            <div class="card">
+                                <div class="card-container p-0">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-12 col-lg-12 px-0">
+                                                <div class="section-header ">
+                                                    <div class="section-header__title">
+                                                        <h4 class="h4">
+                                                            Leasson Details
+                                                        </h4>
+                                                    </div>
+                                                </div>
+                                                <div class="section-content inline-content pb-3">
+                                                    <div class="form-container">
+                                                        <form action="">
+
+                                                            <div class="form-group form-input-container">
+                                                                <label for="">Lesson Title</label>
+                                                                <input type="text" class="form-control input__theme" name="" id="" aria-describedby="helpId" placeholder="Type Title">
+                                                                <small class="form-text">
+                                                                    70 characters max
+                                                                </small>
+                                                            </div>
+
+
+
+                                                            <div class="form-group form-input-container">
+                                                                <label for="">Lesson Tags</label>
+                                                                <input type="text" class="form-control input__theme" name="" id="" aria-describedby="helpId" placeholder="Add tags by comma">
+                                                                <!-- <input type="text" class="form-control input__theme" value="Amsterdam,Washington,Sydney,Beijing,Cairo" data-role="tagsinput" placeholder="Add tags" /> -->
+
+                                                            </div>
+
+                                                            <div class="button-group lessons-button">
+                                                                <button class="btn btn__theme btn__light">Save
+                                                                    draft</button>
+                                                                <a href="#" class="btn btn__theme">Preview & Post</a>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <!-- end -->
+        </div>
+        <!-- end -->
+
+    </div>
+    <!-- body wrapper end -->
+
+
+    <script>
+        $(document).ready(function() {
+            $('.text-editor').richText();
+        });
+    </script>
+    <script>
+        $('ul.theme-tabs li').click(function() {
+            var tab_id = $(this).attr('data-tab');
+
+            $('ul.theme-tabs li').removeClass('current');
+            $('.theme-tab-content').removeClass('current').fadeOut();
+
+            $(this).addClass('current');
+            $("#" + tab_id).addClass('current').fadeIn();
+        })
+
+        // $(document).ready(function() {
+        //     $('select').niceSelect();
+        // });
+    </script>
+</body>
+
+</html>

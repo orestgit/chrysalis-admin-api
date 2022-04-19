@@ -1,0 +1,110 @@
+@import './variables';
+// typography
+@mixin font {
+    font-family: "Poppins", sans-serif;
+    color: $color-black;
+    margin: 0px;
+}
+
+h1.h1 {
+    @include font();
+    font-size: 30px;
+    font-weight: '700';
+}
+
+h2.h2 {
+    @include font();
+    font-size: 25px;
+    font-weight: 600;
+}
+
+h3.h3 {
+    @include font();
+    font-size: 18px;
+    font-weight: 500;
+}
+
+h4.h4 {
+    @include font();
+    font-size: 15px;
+    font-weight: 500;
+    &.fixed {
+        height: 35px;
+    }
+}
+
+h5.h5 {
+    @include font();
+    font-size: 14px;
+    font-weight: 400;
+}
+
+h6.h6 {
+    @include font();
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+p {
+    @include font();
+    font-size: 14px;
+    font-weight: 400;
+    color: $color-grey-mid;
+}
+
+@media (min-width: 280px) and (max-width: 575px) {
+    h2.h2 {
+        font-size: 18px;
+    }
+    h4.h4 {
+        font-size: 12px;
+    }
+    h3.h3 {
+        font-size: 14px;
+    }
+    h5.h5 {
+        font-size: 12px;
+    }
+    p {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    h2.h2 {
+        font-size: 20px;
+    }
+    h4.h4 {
+        font-size: 14px;
+    }
+    h3.h3 {
+        font-size: 15px;
+    }
+    h5.h5 {
+        font-size: 12px;
+    }
+    p {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    h2.h2 {
+        font-size: 22px;
+    }
+    h4.h4 {
+        font-size: 15px;
+    }
+    h3.h3 {
+        font-size: 16px;
+    }
+    h5.h5 {
+        font-size: 12px;
+    }
+    p {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {}

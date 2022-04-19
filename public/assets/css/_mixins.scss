@@ -1,0 +1,32 @@
+// mixins
+@mixin pseudo-style {
+    position: absolute;
+    content: '';
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    // margin-left: -25px;
+}
+
+@mixin card {
+    padding: 0px;
+    background-color: unset;
+    border-width: 0px;
+    // padding: 0px 10px;
+    padding-left: 0px 10px;
+}
+
+@mixin card-container {
+    background: $crd-color-white;
+    display: inline-block;
+    padding: 15px 20px;
+    border-radius: 16px;
+    min-height: 186px;
+}
+
+@mixin w-60 {
+    width: 60%;
+}

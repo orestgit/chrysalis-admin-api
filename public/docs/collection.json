@@ -1,0 +1,1081 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "localhost"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "681a5cde-82e4-4bd1-ba85-e059b6f064e4",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Protocol Apis",
+            "description": "\nAPIs for managing Protocols",
+            "item": [
+                {
+                    "name": "api\/get-protocols",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/get-protocols",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/get-protocols"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"secret\":\"sint\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"protocols are listed below\",\n\"data\": {\n\"protocols\": [\n{\n\"protocol_id\": 4,\n\"title\": \"Protocol for dentists updated\",\n\"status\": 1,\n\"created_at\": \"2021-11-09T17:32:48.000000Z\"\n},\n{\n\"protocol_id\": 6,\n\"title\": \"new protocol\",\n\"status\": 1,\n\"created_at\": \"2021-11-10T14:15:42.000000Z\"\n},\n{\n\"protocol_id\": 7,\n\"title\": \"This is new protocol for testing updated\",\n\"status\": 1,\n\"created_at\": \"2021-11-10T17:03:18.000000Z\"\n}\n]\n},\n\"status\": 200\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/search-protocols",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/search-protocols",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/search-protocols"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"title\":\"nulla\",\"secret\":\"repellendus\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"searched protocols are listed below\",\n\"data\": {\n\"protocols\": [\n{\n\"protocol_id\": 4,\n\"title\": \"Protocol for dentists updated\",\n\"status\": 1,\n\"created_at\": \"2021-11-09T17:32:48.000000Z\"\n}\n]\n},\n\"status\": 200\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The title field is required.\",\n\"status\": 400\n}",
+                            "name": "title validation"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Quiz Apis",
+            "description": "\nAPIs for managing Quizs",
+            "item": [
+                {
+                    "name": "api\/get-quiz",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/get-quiz",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/get-quiz"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"quiz_id\":2,\"secret\":\"ullam\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"quiz details is below\",\n\"data\": {\n\"quizs\": [\n{\n\"question_id\": 46,\n\"quiz_id\": 10,\n\"question\": \"Obcaecati ullam face\",\n\"hint\": \"Magni ut commodo nat\",\n\"type\": 1,\n\"created_at\": \"2021-11-05T17:02:00.000000Z\",\n\"updated_at\": \"2021-11-05T17:02:00.000000Z\",\n\"deleted_at\": null,\n\"options\": [\n{\n\"option_id\": 114,\n\"question_id\": 46,\n\"option\": \"Yes\",\n\"is_correct\": 1,\n\"created_at\": \"2021-11-05T17:02:00.000000Z\",\n\"updated_at\": \"2021-11-05T17:02:00.000000Z\",\n\"deleted_at\": null\n},\n{\n\"option_id\": 115,\n\"question_id\": 46,\n\"option\": \"No\",\n\"is_correct\": 2,\n\"created_at\": \"2021-11-05T17:02:00.000000Z\",\n\"updated_at\": \"2021-11-05T17:02:00.000000Z\",\n\"deleted_at\": null\n}\n]\n},\n{\n\"question_id\": 47,\n\"quiz_id\": 10,\n\"question\": \"Pariatur Omnis volu\",\n\"hint\": \"A voluptate repudian\",\n\"type\": 2,\n\"created_at\": \"2021-11-05T17:02:00.000000Z\",\n\"updated_at\": \"2021-11-05T17:02:00.000000Z\",\n\"deleted_at\": null,\n\"options\": [\n{\n\"option_id\": 116,\n\"question_id\": 47,\n\"option\": \"Quia quidem proident\",\n\"is_correct\": 1,\n\"created_at\": \"2021-11-05T17:02:00.000000Z\",\n\"updated_at\": \"2021-11-05T17:02:00.000000Z\",\n\"deleted_at\": null\n},\n{\n\"option_id\": 117,\n\"question_id\": 47,\n\"option\": \"Libero dolores reici\",\n\"is_correct\": 1,\n\"created_at\": \"2021-11-05T17:02:00.000000Z\",\n\"updated_at\": \"2021-11-05T17:02:00.000000Z\",\n\"deleted_at\": null\n},\n{\n\"option_id\": 118,\n\"question_id\": 47,\n\"option\": \"Est expedita error q\",\n\"is_correct\": 1,\n\"created_at\": \"2021-11-05T17:02:00.000000Z\",\n\"updated_at\": \"2021-11-05T17:02:00.000000Z\",\n\"deleted_at\": null\n},\n{\n\"option_id\": 119,\n\"question_id\": 47,\n\"option\": \"Quas et sunt quae re\",\n\"is_correct\": 1,\n\"created_at\": \"2021-11-05T17:02:00.000000Z\",\n\"updated_at\": \"2021-11-05T17:02:00.000000Z\",\n\"deleted_at\": null\n}\n]\n},\n{\n\"question_id\": 48,\n\"quiz_id\": 10,\n\"question\": \"Alias cillum veniam\",\n\"hint\": \"Ad voluptatem eligen\",\n\"type\": 3,\n\"created_at\": \"2021-11-05T17:02:00.000000Z\",\n\"updated_at\": \"2021-11-05T17:02:00.000000Z\",\n\"deleted_at\": null,\n\"options\": [\n{\n\"option_id\": 120,\n\"question_id\": 48,\n\"option\": \"Commodi beatae minus\",\n\"is_correct\": 2,\n\"created_at\": \"2021-11-05T17:02:00.000000Z\",\n\"updated_at\": \"2021-11-05T17:02:00.000000Z\",\n\"deleted_at\": null\n},\n{\n\"option_id\": 121,\n\"question_id\": 48,\n\"option\": \"Impedit accusamus n\",\n\"is_correct\": 1,\n\"created_at\": \"2021-11-05T17:02:00.000000Z\",\n\"updated_at\": \"2021-11-05T17:02:00.000000Z\",\n\"deleted_at\": null\n},\n{\n\"option_id\": 122,\n\"question_id\": 48,\n\"option\": \"Quisquam dolores fug\",\n\"is_correct\": 2,\n\"created_at\": \"2021-11-05T17:02:01.000000Z\",\n\"updated_at\": \"2021-11-05T17:02:01.000000Z\",\n\"deleted_at\": null\n},\n{\n\"option_id\": 123,\n\"question_id\": 48,\n\"option\": \"Sed eligendi aliquid\",\n\"is_correct\": 2,\n\"created_at\": \"2021-11-05T17:02:01.000000Z\",\n\"updated_at\": \"2021-11-05T17:02:01.000000Z\",\n\"deleted_at\": null\n}\n]\n},\n{\n\"question_id\": 49,\n\"quiz_id\": 10,\n\"question\": \"Qui magni sunt dolor\",\n\"hint\": \"Culpa qui ullam null\",\n\"type\": 4,\n\"created_at\": \"2021-11-05T17:02:01.000000Z\",\n\"updated_at\": \"2021-11-05T17:02:01.000000Z\",\n\"deleted_at\": null,\n\"options\": [\n{\n\"option_id\": 124,\n\"question_id\": 49,\n\"option\": \"1294705576.jpg\",\n\"is_correct\": 1,\n\"created_at\": \"2021-11-05T17:02:01.000000Z\",\n\"updated_at\": \"2021-11-05T17:02:01.000000Z\",\n\"deleted_at\": null\n},\n{\n\"option_id\": 125,\n\"question_id\": 49,\n\"option\": \"4606618650.png\",\n\"is_correct\": 2,\n\"created_at\": \"2021-11-05T17:02:01.000000Z\",\n\"updated_at\": \"2021-11-05T17:02:01.000000Z\",\n\"deleted_at\": null\n},\n{\n\"option_id\": 126,\n\"question_id\": 49,\n\"option\": \"3067659607.jpg\",\n\"is_correct\": 2,\n\"created_at\": \"2021-11-05T17:02:01.000000Z\",\n\"updated_at\": \"2021-11-05T17:02:01.000000Z\",\n\"deleted_at\": null\n},\n{\n\"option_id\": 127,\n\"question_id\": 49,\n\"option\": \"3042335406.png\",\n\"is_correct\": 2,\n\"created_at\": \"2021-11-05T17:02:01.000000Z\",\n\"updated_at\": \"2021-11-05T17:02:01.000000Z\",\n\"deleted_at\": null\n}\n]\n}\n]\n},\n\"status\": 200\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The quiz id field is required.\",\n\"status\": 400\n}",
+                            "name": "quiz_id validation"
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/attempt-quiz",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/attempt-quiz",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/attempt-quiz"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"option_id\":17,\"question_id\":16,\"user_id\":[\"qui\"],\"secret\":\"occaecati\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"Your answer for this question has been saved\",\n\"status\": 200\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The question id field is required.\",\n\"status\": 400\n}",
+                            "name": "question_id validation"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The question id field is required.\",\n\"status\": 400\n}",
+                            "name": "option_id validation"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The user id field is required.\",\n\"status\": 400\n}",
+                            "name": "user_id validation"
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/get-quiz-result",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/get-quiz-result",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/get-quiz-result"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"quiz_id\":\"perspiciatis\",\"user_id\":[\"labore\"],\"option_id\":15,\"question_id\":13,\"secret\":\"et\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"Your quiz submited successfully\",\n\"score\": 0,\n\"status\": 200\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The quiz id field is required.\",\n\"status\": 400\n}",
+                            "name": "quiz_id validation"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The user id field is required.\",\n\"status\": 400\n}",
+                            "name": "user_id validation"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Authentication Apis",
+            "description": "\nAPIs for managing users",
+            "item": [
+                {
+                    "name": "api\/register",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/register",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"first_name\":\"voluptatem\",\"last_name\":\"veritatis\",\"email\":\"eius\",\"password\":\"adipisci\",\"secret\":\"doloremque\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"User Created Successfully\",\n\"data\": {\n\"user\": {\n\"first_name\": \"john\",\n\"last_name\": \"arthor\",\n\"email\": \"talha.hussain@eegamesstudio.com\",\n\"user_role\": 5,\n\"otp\": 49013,\n\"updated_at\": \"2021-11-16T14:36:28.000000Z\",\n\"created_at\": \"2021-11-16T14:36:28.000000Z\",\n\"id\": 25\n}\n},\n\"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNzkwODM0ZDM3Y2E0ODYyMGRiOTgwOWRlOGZmMWFiZGExNjNhOGFiMzliNDVlYzk1ZTkyMDgxNWQ5N2JmNzcwNzI2YTY4ZWJlNWQxZDMyNTEiLCJpYXQiOjE2MzcwNzMzOTIuNTUyODg5LCJuYmYiOjE2MzcwNzMzOTIuNTUyODk0LCJleHAiOjE2Njg2MDkzOTIuNDU5MTc1LCJzdWIiOiIyNSIsInNjb3BlcyI6W119.PYqR8TxywalG2RuUIqczm35pLbUQjN47rN4m3mXRTeswykcBATQtqj9azznqOOlk1z3-jZDb9g8JJut-v3buYE_bjjeugGACoH0FuKfNXKUxClbF1E0Yx3COcXqumWQ0Y3rlkrygg5JU-vks1HSZXNdEQ6YX8VUsIDRm-dUjDLFJVSdhfVnr5_LnZwFNqyoAeObDac0tQPc8ad3UL6s2T-BNVP2hj86JTGNz1PtjMAPPmmQLEYT6mhGaghZAPSqEcP16s2ZAa0Dm9lxHVjOCF11x2vQ39FC4H_WuxPv1PcnWGX4VNHqxbong-UZ7kmj7s8L0fa9h70QLo4-B3U-PDuqZ7ddMUlJOaXfbRHBoSZAqHhCCVziSTBwQG1D-MuBoyjQZlVq9LI2Fsk-5ygCaooMDTfnfAKK2tZXGNe1qETTOOl3AQ383SPPC5LJEqpIgnJ-3YXdEiJybZ7HmModoT3hzENTQJ_387efZdDxfFrNVx3RslIch4zRDIVrOtWkankzEVF0Rs3ci8ViRLym31XJT_Ffr9U4fZFmD9TLQfjNhhQUK2tRR5DCNupkFhoPq8ardHZQ6lyq_AdUQtPg5MX3dywCd9GTXnqp8JUQGk3FNzYkOS-Zf1O48FIUk7QiAiG5XWqvt5GaTOlrdjz71sDQsEr5MspQsQ06Xf-P3SzY\",\n\"status\": 200\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The first name field is required.\",\n\"status\": 400\n}",
+                            "name": "first_name validation"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The last name field is required.\",\n\"status\": 400\n}",
+                            "name": "last_name validation"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The email field is required.\",\n\"status\": 400\n}",
+                            "name": "email validation"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The password field is required.\",\n\"status\": 400\n}",
+                            "name": "password validation"
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/login",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/login",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"rem\",\"password\":\"rerum\",\"secret\":\"necessitatibus\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"data\": {\n\"users\": {\n\"id\": 25,\n\"first_name\": \"john\",\n\"last_name\": \"arthor\",\n\"email\": \"talha.hussain@eegamesstudio.com\",\n\"phone\": null,\n\"email_verified_at\": null,\n\"image\": null,\n\"user_role\": 5,\n\"status\": 1,\n\"otp\": \"49013\",\n\"created_at\": \"2021-11-16T14:36:28.000000Z\",\n\"updated_at\": \"2021-11-16T14:36:28.000000Z\",\n\"deleted_at\": null\n}\n},\n\"message\": \"You have successfully logged in \",\n\"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiM2E5ZmM3OWY3MmNkZDMyODE3N2NkNDkxNDJlZDZlOTAzOTAzMTUwYjNlNWU3MjQyNjQwZjZkMjAyNzJkY2UyNGZlNzA3MGU1OTI4ODBmZGUiLCJpYXQiOjE2MzcwNzM0MTkuNjYxMzIyLCJuYmYiOjE2MzcwNzM0MTkuNjYxMzI3LCJleHAiOjE2Njg2MDk0MTkuNjAzMzY5LCJzdWIiOiIyNSIsInNjb3BlcyI6W119.v6w2YpbsIH9zvfZAbWYw_cEGJIKT2W6svWGQDtfmujhqQlbaCcGylsq6rcJ69Gx7NoYEN_4VIQ_Yj6bxwxf52Gxzwq5FRpujwDD2Yd6sZJzZpY9QMzXi2yXvxAJPrk6uv1Db2iNekumBv6bt0lJfnDEgi7LbBtVZsHb7IQl4-4bHWBhBX0NZymcVmdsRwAx1YTzk9CXidFnTJHJqGjKUWSmBR34Z2obQGTcOMIcZ_55tKTGx9lgR9DMaN3wLiYkNWc6W_ToObZgEtbwsiFzCtJe-4YL86bAivZTfHoM0ol6fn92NqF5YN2Ujq0U8rM21XFyhx4VPT7JcOxcjncQOdeZcr90xFfMb4elBQ-VTwUB3xHcoesceoxCmnV2n3PUSWBHdj4BsLYoTGSt-3m3rEmdphVybdC7FO-eh0BrGoMBJosQg1ts11tapN4Z72orJf2k8ZK6iA6dAf551eHzb-u2zllJGswdvPH0YjvG23eTTdpfYB3jnKLMOXutVfipEtaYhSkq-aKKAcbMRmnnkVSUvTh5TFnmoaluYLiAteAG8vQLM_vb_DJej0GLsTpCZg-Qhp2I3P98tnqyxeBb4Ypvuw-ulfEmtwq4OcDHB5A7PGCeem45dkj-ouuy6dVydtEgWGzP0txZxJqGNB2wvv7jXwFFJYNwbZUpf-XXzyZg\",\n\"status\": 200\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The email field is required.\",\n\"status\": 400\n}",
+                            "name": "email validation"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The password field is required.\",\n\"status\": 400\n}",
+                            "name": "password validation"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"These credentials do not match our records.\",\n\"status\": 400\n}",
+                            "name": "auth  credentials mismatch"
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/account-verify",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/account-verify",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/account-verify"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"otp\":16,\"secret\":\"dolorem\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"User accout verified Successfully\",\n\"data\": {\n\"user\": {\n\"id\": 22,\n\"first_name\": \"john\",\n\"last_name\": \"arthor\",\n\"email\": \"talha.hussain@eegamesstudio.com\",\n\"phone\": null,\n\"email_verified_at\": null,\n\"image\": null,\n\"user_role\": 5,\n\"status\": 1,\n\"otp\": \"94539\",\n\"created_at\": \"2021-11-16T10:27:11.000000Z\",\n\"updated_at\": \"2021-11-16T10:27:11.000000Z\",\n\"deleted_at\": null\n}\n},\n\"status\": 200\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The otp field is required.\",\n\"status\": 400\n}",
+                            "name": "email validation"
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/send-otp",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/send-otp",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/send-otp"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"ipsa\",\"secret\":\"aut\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"Otp has sended on your email kindly check your email\",\n\"data\": {\n\"user\": {\n\"id\": 22,\n\"first_name\": \"john\",\n\"last_name\": \"arthor\",\n\"email\": \"talha.hussain@eegamesstudio.com\",\n\"phone\": null,\n\"email_verified_at\": null,\n\"image\": null,\n\"user_role\": 5,\n\"status\": 1,\n\"otp\": 66272,\n\"created_at\": \"2021-11-16T10:27:11.000000Z\",\n\"updated_at\": \"2021-11-16T11:52:42.000000Z\",\n\"deleted_at\": null\n}\n},\n\"status\": 200\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The email field is required.\",\n\"status\": 400\n}",
+                            "name": "email validation"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"This email is not registered\",\n\"status\": 400\n}",
+                            "name": "email verification"
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/reset-password",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/reset-password",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/reset-password"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"user_id\":8,\"password\":\"et\",\"secret\":\"molestiae\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"Your password has updated successfully\",\n\"status\": 200\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The user id field is required.\",\n\"status\": 400\n}",
+                            "name": "user_id validation"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"This password is not registered\",\n\"status\": 400\n}",
+                            "name": "password verification"
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/user-profile",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user-profile",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/user-profile"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"secret\":\"perferendis\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"Your profile data is below\",\n\"data\": {\n\"user\": {\n\"id\": 22,\n\"first_name\": \"john\",\n\"last_name\": \"arthor\",\n\"email\": \"talha.hussain@eegamesstudio.com\",\n\"phone\": null,\n\"email_verified_at\": null,\n\"image\": null,\n\"user_role\": 5,\n\"status\": 1,\n\"otp\": \"66272\",\n\"created_at\": \"2021-11-16T10:27:11.000000Z\",\n\"updated_at\": \"2021-11-16T11:52:42.000000Z\",\n\"deleted_at\": null\n}\n},\n\"status\": 200\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/logout",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/logout",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/logout"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"secret\":\"et\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"Your have loged out successfully\",\n\"status\": 200\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/update-profile",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/update-profile",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/update-profile"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"first_name\":\"nihil\",\"last_name\":\"fuga\",\"email\":\"nihil\",\"phone\":\"nam\",\"password\":\"architecto\",\"secret\":\"porro\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"Your profile has updateds successfully\",\n\"status\": 200\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The first name field is required.\",\n\"status\": 400\n}",
+                            "name": "first_name validation"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The last name field is required.\",\n\"status\": 400\n}",
+                            "name": "last_name validation"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The phone field is required.\",\n\"status\": 400\n}",
+                            "name": "phone validation"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The email field is required.\",\n\"status\": 400\n}",
+                            "name": "email validation"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The password field is required.\",\n\"status\": 400\n}",
+                            "name": "password validation"
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/update-password",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/update-password",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/update-password"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"user_id\":18,\"password\":\"ut\",\"secret\":\"dolorum\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"Your password has updated successfully\",\n\"status\": 200\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The user id field is required.\",\n\"status\": 400\n}",
+                            "name": "user_id validation"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"This password is not registered\",\n\"status\": 400\n}",
+                            "name": "password verification"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Course Apis",
+            "description": "\nAPIs for managing Courses",
+            "item": [
+                {
+                    "name": "api\/view-course",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/view-course",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/view-course"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"type\":5,\"secret\":\"magnam\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"course details are bellow\",\n\"data\": {\n\"courses\": [\n{\n\"course_id\": 1,\n\"course_category\": 7,\n\"title\": \"this is title with fixed meta issue\",\n\"type\": 2,\n\"price\": 100,\n\"overview\": \"11\",\n\"summary\": \"summary here\",\n\"method\": \"online\",\n\"lesson_duration\": 12,\n\"start_date\": \"2021-11-26\",\n\"end_date\": \"2021-11-27\",\n\"image\": \"1636704883.png\",\n\"tags\": \"tag1,tag2\",\n\"views\": 0,\n\"likes\": 0,\n\"address\": null,\n\"lat\": null,\n\"lng\": null,\n\"status\": 4,\n\"created_at\": \"2021-11-12T09:14:43.000000Z\",\n\"updated_at\": \"2021-11-12T09:57:56.000000Z\",\n\"deleted_at\": null,\n\"lesson_count\": 0\n},\n{\n\"course_id\": 2,\n\"course_category\": 7,\n\"title\": \"this is title with fixed meta issues\",\n\"type\": 2,\n\"price\": 100,\n\"overview\": \"11\",\n\"summary\": \"summary here\",\n\"method\": \"online\",\n\"lesson_duration\": 12,\n\"start_date\": \"2021-11-26\",\n\"end_date\": \"2021-11-27\",\n\"image\": \"1636704944.jpg\",\n\"tags\": \"tag1,tag2\",\n\"views\": 0,\n\"likes\": 0,\n\"address\": \"Lahore, Pakistan\",\n\"lat\": \"31.5203696\",\n\"lng\": \"74.35874729999999\",\n\"status\": 4,\n\"created_at\": \"2021-11-12T09:15:44.000000Z\",\n\"updated_at\": \"2021-11-12T08:15:44.000000Z\",\n\"deleted_at\": null,\n\"lesson_count\": 0\n}\n]\n},\n\"status\": 200\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"error\": {\n\"lesson_id\": [\n\"The type field is required.\"\n]\n},\n\"status\": 400\n}",
+                            "name": "type validation"
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/course-details",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/course-details",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/course-details"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"course_id\":10,\"secret\":\"aut\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"course details are bellow\",\n\"data\": {\n\"course\": [\n{\n\"id\": 3,\n\"title\": \"this is online course\",\n\"lesson_duration\": 696,\n\"type\": 1,\n\"method\": \"In-class\",\n\"price\": 513,\n\"summary\": \"Cumque cum praesenti\",\n\"image\": \"1637075153.jpg\",\n\"views\": 0,\n\"likes\": 0,\n\"total_lesson\": 1,\n\"lessons\": [\n{\n\"lesson_id\": 1,\n\"course_id\": 3,\n\"title\": \"134\",\n\"overview\": \"Numquam minima non c\",\n\"summary\": \"Culpa velit laborio\",\n\"video\": \"1637075218.mp4\",\n\"date\": null,\n\"start_time\": null,\n\"end_time\": null,\n\"qr_code\": null,\n\"qr_image\": null,\n\"created_at\": \"2021-11-16T16:06:58.000000Z\",\n\"updated_at\": \"2021-11-16T16:06:58.000000Z\",\n\"deleted_at\": null\n}\n]\n}\n]\n},\n\"status\": 200\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"error\": {\n\"lesson_id\": [\n\"The course id field is required.\"\n]\n},\n\"status\": 400\n}",
+                            "name": "course_id validation"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Lesson Apis",
+            "description": "\nAPIs for managing Lessons",
+            "item": [
+                {
+                    "name": "api\/lesson-details",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/lesson-details",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/lesson-details"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"lesson_id\":17,\"secret\":\"libero\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"lesson details are bellow\",\n\"data\": {\n\"lesson\": [\n{\n\"lesson_id\": 1,\n\"title\": \"134\",\n\"overview\": \"Numquam minima non c\",\n\"summary\": \"Culpa velit laborio\",\n\"video\": \"1637075218.mp4\",\n\"quiz\": [\n{\n\"quiz_id\": 5,\n\"image\": \"1635838486.png\"\n}\n]\n}\n]\n},\n\"status\": 200\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"error\": {\n\"lesson_id\": [\n\"The lesson id field is required.\"\n]\n},\n\"status\": 400\n}",
+                            "name": "lesson_id validation"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Post Apis",
+            "description": "\nAPIs for managing posts",
+            "item": [
+                {
+                    "name": "api\/view-posts",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/view-posts",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/view-posts"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"secret\":\"laudantium\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"posts and categories bellow\",\n\"data\": {\n\"types\": [\n{\n\"post_type_id\": 5,\n\"name\": \"post type here\",\n\"created_at\": \"2021-10-22T19:26:29.000000Z\",\n\"updated_at\": \"2021-11-01T12:24:39.000000Z\",\n\"deleted_at\": null\n}\n],\n\"post\": [\n{\n\"post_id\": 7,\n\"title\": \"Delectus nulla ipsa\",\n\"description\": \"Id exercitationem la\",\n\"type\": 5,\n\"image\": \"1636622132.png\",\n\"status\": 1,\n\"tags\": \"Tenetur voluptatem s\",\n\"views\": 0,\n\"likes\": 0,\n\"created_at\": \"2021-11-11T10:15:32.000000Z\"\n}\n]\n},\n\"status\": 200\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/post-details",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/post-details",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/post-details"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"post_id\":\"impedit\",\"secret\":\"iste\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"post details is below\",\n\"data\": {\n\"post\": [\n{\n\"id\": 7,\n\"author_id\": 1,\n\"title\": \"Delectus nulla ipsa\",\n\"description\": \"Id exercitationem la\",\n\"image\": \"1636622132.png\",\n\"likes\": 0,\n\"views\": 0,\n\"tags\": \"Tenetur voluptatem s\",\n\"name\": \"post type here\",\n\"images\": [\n{\n\"link\": \"3102076750.jpg\"\n},\n{\n\"link\": \"3217966126.png\"\n},\n{\n\"link\": \"3908092552.jpg\"\n},\n{\n\"link\": \"6811210134.png\"\n}\n],\n\"user\": {\n\"0\": {\n\"id\": 1,\n\"first_name\": \"Admin\",\n\"last_name\": \"Name\",\n\"image\": \"1635162482.png\",\n\"about\": null,\n\"facebook\": null,\n\"twitter\": null,\n\"instagram\": null,\n\"linkedin\": null\n},\n\"education\": [\n{\n\"id\": 3,\n\"year\": \"2021-10-23\",\n\"details\": \"some details here \"\n},\n{\n\"id\": 4,\n\"year\": \"2021-10-23\",\n\"details\": \"some details here \"\n}\n],\n\"related_posts\": []\n}\n}\n]\n},\n\"status\": 200\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The post id field is required.\",\n\"status\": 400\n}",
+                            "name": "post_id validation"
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/search-post",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/search-post",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/search-post"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"title\":\"qui\",\"secret\":\"nihil\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"Search results\",\n\"data\": {\n\"post\": [\n{\n\"post_id\": 7,\n\"title\": \"Delectus nulla ipsa\",\n\"description\": \"Id exercitationem la\",\n\"type\": 5,\n\"image\": \"1636622132.png\",\n\"status\": 1,\n\"tags\": \"Tenetur voluptatem s\",\n\"views\": 0,\n\"likes\": 0,\n\"created_at\": \"2021-11-11T10:15:32.000000Z\"\n}\n]\n},\n\"status\": 200\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"error\": {\n\"title\": [\n\"The title field is required.\"\n]\n},\n\"status\": 400\n}",
+                            "name": "title validation"
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/like-post",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/like-post",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/like-post"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"user_id\":14,\"post_id\":1,\"secret\":\"et\"}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"you have been liked post\",\n\"status\": 200\n}",
+                            "name": "like"
+                        },
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"you have been disliked post\",\n\"status\": 200\n}",
+                            "name": "dislike"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The user id field is required.\",\n\"status\": 400\n}",
+                            "name": "user_id validation"
+                        },
+                        {
+                            "header": [],
+                            "code": 400,
+                            "body": "{\n\"message\": \"Please fix the following error to continue\",\n\"errors\": \"The post id field is required.\",\n\"status\": 400\n}",
+                            "name": "post_id validation"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}
