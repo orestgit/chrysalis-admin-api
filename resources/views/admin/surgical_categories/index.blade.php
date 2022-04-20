@@ -68,6 +68,7 @@
                                                                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                                                                                     <a class="dropdown-item" href="{{route('edit-surgical-category',['id'=> $category->id,'action'=>'edit'])}}">Edit</a>
                                                                                                     <a class="dropdown-item" href="{{route('edit-surgical-category',['id'=> $category->id,'action'=>'view'])}}">View</a>
+                                                                                                    <a class="dropdown-item" href="{{route('manage-surgical-questions',['id'=> $category->id])}}">Manage Questions</a>
                                                                                                     <a class="dropdown-item del-record"
                                                                                                        data-url="{{route('delete-surgical-category',['id'=>$category->id])}}">Delete</a>
                                                                                                 </div>

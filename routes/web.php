@@ -21,7 +21,7 @@ use App\Http\Controllers\user\UserController;
 use App\Http\Controllers\admin\AdminProtocolChapterController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\admin\SurgicalCategoryController;
-
+use App\Http\Controllers\admin\AdminSurgicalQuestionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -200,6 +200,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>['customAuth']], function() {
     Route::get("edit-surgical-category",[SurgicalCategoryController::class,'edit'])->name('edit-surgical-category');
     Route::post("update-surgical-category",[SurgicalCategoryController::class,'update'])->name('update-surgical-category');
     Route::get("delete-surgical-category",[SurgicalCategoryController::class,'delete'])->name('delete-surgical-category');
+    Route::get("manage-surgical-questions",[AdminSurgicalQuestionController::class,'index'])->name('manage-surgical-questions');
     /** Surgical section */
 
 });

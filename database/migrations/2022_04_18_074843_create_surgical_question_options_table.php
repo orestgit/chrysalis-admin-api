@@ -14,10 +14,11 @@ class CreateSurgicalQuestionOptionsTable extends Migration
     public function up()
     {
         Schema::create('surgical_question_options', function (Blueprint $table) {
-            $table->id();
+            $table->increments('option_id');
             $table->integer('question_id');
             $table->string('heading');
             $table->text('text');
+            $table->text('hint');
             $table->integer('next_question_id');
             $table->timestamps();
         });

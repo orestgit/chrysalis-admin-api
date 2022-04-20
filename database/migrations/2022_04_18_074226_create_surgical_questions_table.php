@@ -13,7 +13,7 @@ class CreateSurgicalQuestionsTable extends Migration
      */
     public function up(){
         Schema::create('surgical_questions', function (Blueprint $table) {
-            $table->id();
+            $table->increments('question_id');
             $table->text('question');
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->dateTime('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));

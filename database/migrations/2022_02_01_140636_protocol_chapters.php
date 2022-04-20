@@ -18,8 +18,8 @@ class ProtocolChapters extends Migration
             $table->string('label')->nullable();
             $table->text('question')->nullable();
             $table->integer('yes_option')->default(0);
-            $table->integer('no_option')->nullable(0);
-            $table->integer('skip_option')->nullable(0);
+            $table->integer('no_option')->nullable();
+            $table->integer('skip_option')->nullable()->default(0);
             $table->text('yes_option_text')->nullable();
             $table->text('description_one')->nullable();
             $table->text('description_two')->nullable();

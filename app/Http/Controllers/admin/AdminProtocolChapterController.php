@@ -31,6 +31,7 @@ class AdminProtocolChapterController extends Controller
             'description_one' => $request->input('description_one'),
             'description_two' => $request->input('description_two'),
             'yes_option_text' => $request->input('yes_option_text'),
+            'no_option' => $request->input('no_option_text'),
         ]);
        if($request->has('ids') && !empty($request->input('ids'))){
            $ids = explode(',', $request->input('ids'));

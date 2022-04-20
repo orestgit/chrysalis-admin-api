@@ -86,6 +86,18 @@
                                                                 @enderror
                                                             </div>
                                                         </div>
+                                                        <div class="col-sm-6 col-xs-12">
+                                                            <div class="form-container">
+                                                                <label>No Option Text</label>
+                                                                <input type="text" class="form-control input__theme  @error('no_option_text') is-invalid @enderror"
+                                                                       value="{{old('no_option_text')}}" name="yes_option_text" id="" aria-describedby="helpId" placeholder="Type No Option Text">
+                                                                @error('no_option_text')
+                                                                <span class="invalid-feedback" role="alert">
+                                                                <strong>{{ $message }}</strong>
+                                                            </span>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
                                                     </div>
 
                                                 </div>

@@ -9,6 +9,7 @@ use Stripe\Util\RandomGenerator;
 
 class SurgicalCategoryController extends Controller{
     public  function index(){
+
         $data['heading']='Surgical Categories';
         $data['sub_heading']='Surgical Categories';
         $data['categories']=SurgicalCategory::all();
