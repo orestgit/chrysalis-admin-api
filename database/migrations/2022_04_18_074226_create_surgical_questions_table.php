@@ -15,6 +15,7 @@ class CreateSurgicalQuestionsTable extends Migration
         Schema::create('surgical_questions', function (Blueprint $table) {
             $table->increments('question_id');
             $table->text('question');
+            $table->text('hint');
             $table->dateTime('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->dateTime('updated_at')->default(DB::raw('CURRENT_TIMESTAMP'));
         });

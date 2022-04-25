@@ -221,6 +221,7 @@ $(document).ready(function () {
     // Attach listener to address input field.
     googleAutocomplete.autocompleteField("address");
     var count_array = [];
+    var options_array=[];
     $(document).ready(function () {
         //
         $('#imgInp').on('change', function () {
@@ -663,10 +664,134 @@ $(document).ready(function () {
             }
         })
 
-    })
 
+        // code to add new surgical questions
+        var options_count= [];
+        $('#add_surgical_question').on('click', function (e) {
+            e.preventDefault();
+            var current_count = $(this).data('count') + 1;
+            var current_class = current_count == 1 ? "current" : "";
+            $(this).data('count', current_count);
+            count_array.push(current_count);
+            $('input:hidden[name=ids]').val(count_array.join(","));
+            var tab = '<li class="theme-tab-item ' + current_class + ' class_' + current_count + '"  data-tab="tab-' + current_count + '">' + current_count + '</li>';
+            var tab_content = '';
+            var question = 'question_' + current_count;
+            var option_1 = 'thumbnail_' + current_count;
+            var option_2 = 'option_2' + current_count;
+            var option_3 = 'option_3' + current_count;
+            var option_4 = 'option_4' + current_count;
+            var answer = 'answer_' + current_count;
+
+            var choose_answer = 'choose_answer_' + current_count;
+            tab_content = '<div id="tab-' + current_count + '"  class="theme-tab-content ' + current_class + '  class_' + current_count + '" >' +
+                '   <div  class="container-fluid">\n' +
+                '     <div  class="row">\n' +
+                '      <div  class="col-12 col-lg-6">\n' +
+                '         <div  class="section-header section-title-head section-lessons-md px-0">\n' +
+                '            <div class="section-header__title">\n' +
+                '               <h4 class="h4">  Question   Details </h4>\n' +
+                '            </div>\n' +
+                '         </div>\n' +
+                '         <div  class="input-fields-container">\n' +
+                '            <div class="form-group form-input-container">\n' +
+                '               <input type="hidden"  name=' + answer + ' value="1">' +
+                '               <textarea class="form-control   input__theme textarea__theme"  name="' + question + '" id="" rows="3" placeholder="Question"></textarea>\n' +
+                '            </div>\n' +
+                '            <input type="hidden" name="question_type_' + current_count + '" value="1" >\n' +
+                '         </div>\n' +
+                '            <input type="hidden" name="question_type_' + current_count + '" value="1" >\n' +
+                '         </div>\n' +
+                '      <div  class="col-12 col-lg-6">\n' +
+                '       <div class="section-header section-title-head section-lessons-md px-0">\n' +
+                '               <h4 class="h4">  Hint/ Explanation</h4>\n' +
+                '       </div>\n' +
+                '         <div  class="input-fields-container">\n' +
+                '            <div  class="form-group form-input-container">\n' +
+                '               <textarea class="form-control   input__theme textarea__theme"  name="hint_' + current_count + '" id="" rows="3" placeholder="Hint"></textarea>\n' +
+                '            </div>\n' +
+                '                   </div>'+
+                '   </div><br/><br/>\n <div id="append_options_'+current_count+'"></div>' +
+                '<div  class="col-12 col-lg-4">' +
+                '<div class="input-fields-container">' +
+                '<input type="hidden" name="options_count" id="options_count_' + current_count + '"> <div class="form-group form-input-container">' +
+                    '<select  class="form-control" id="option_select_' + current_count + '" ><option value="1">Option With images</option><option value="2">Option Without images</option></select></div></div></div>' +
+                    '<div  class="col-12 col-lg-3"><a   data-id="' + current_count + '" class="btn btn__theme    btn-edit-remove add_option" data-count="0"  id="add_option_' + current_count + '">Add Question Option</a></div>' +
+                '</div></div><br/>' +
+                ' <div class="row"><div  class="col-12 col-lg-12"><a  data-route="' + config.routes.deleteProtocolQuestion + '"  data-id="' + current_count + '" class="btn btn__theme    btn-edit-remove delete_question">Delete</a></div></div> ' +
+                '</div>' +
+
+                '</div>'
+            $('.theme-tabs').append(tab);
+            $('#question_content').append(tab_content);
+        })
+
+    })
+    $(document).on('click', ".add_option ", function (e) {
+        var id=$(this).data('id');
+        var current_count = $(this).data('count') + 1;
+        var div_id= id+"_"+current_count;
+        $(this).data('count', current_count);
+        options_array.push(div_id);
+        $("#options_count_"+id).val(options_array.join(","));
+        var col_class=$("#option_select_"+id).val()==1 ? 'col-lg-2' :'col-lg-3';
+        var html="<div id='"+div_id+"'><div class='container-fluid'><div class='row'>";
+        html+='<div class="col-12 '+col_class+'">\n' +
+            '       <div class="section-header section-title-head section-lessons-md px-0">\n' +
+            '               <h4 class="h4">  Hint</h4>\n' +
+            '       </div>\n' +
+            '         <div class="input-fields-container">\n' +
+            '            <div class="form-group form-input-container">\n' +
+            '               <textarea class="form-control   input__theme textarea__theme" name="hint_'+div_id+'" id="" rows="3" placeholder="Hint"></textarea>\n' +
+            '            </div>\n' +
+            '                   </div>   </div>';
+        html+='<div class="col-12 '+col_class+'">\n' +
+            '       <div class="section-header section-title-head section-lessons-md px-0">\n' +
+            '               <h4 class="h4">  Hint Color</h4>\n' +
+            '       </div>\n' +
+            '         <div class="input-fields-container">\n' +
+            '            <div class="form-group form-input-container">\n' +
+            '              <input type="color" name="hint_color_'+div_id+'"  value="#000000" class="form-control" />\n' +
+            '            </div>\n' +
+            '                   </div>   </div>';
+        html+='<div class="col-12 '+col_class+'">\n' +
+            '       <div class="section-header section-title-head section-lessons-md px-0">\n' +
+            '               <h4 class="h4">  Text</h4>\n' +
+            '       </div>\n' +
+            '         <div class="input-fields-container">\n' +
+            '            <div class="form-group form-input-container">\n' +
+            '               <textarea class="form-control   input__theme textarea__theme" name="text_'+div_id+'" id="" rows="3" placeholder="Text"></textarea>\n' +
+            '            </div>\n' +
+            '                   </div>   </div>';
+        html+='<div class="col-12 '+col_class+'">\n' +
+            '       <div class="section-header section-title-head section-lessons-md px-0">\n' +
+            '               <h4 class="h4">  Heading</h4>\n' +
+            '       </div>\n' +
+            '         <div class="input-fields-container">\n' +
+            '            <div class="form-group form-input-container">\n' +
+            '               <textarea class="form-control   input__theme textarea__theme" name="heading_'+div_id+'" id="" rows="3" placeholder="Heading"></textarea>\n' +
+            '            </div>\n' +
+            '                   </div>   </div>';
+        if($("#option_select_"+id).val()==1){
+            html+='<div class="col-12 '+col_class+'">\n' +
+                '       <div class="section-header section-title-head section-lessons-md px-0">\n' +
+                '               <h4 class="h4">  Images</h4>\n' +
+                '       </div>\n' +
+                '         <div class="input-fields-container">\n' +
+                '            <div class="form-group form-input-container">\n' +
+                '           <input type="file" name="images_'+div_id+'[]"  multiple > \n'+
+                '            </div>\n' +
+                '                   </div>   </div></div>';
+        }
+        html+='<div class="container-fluid"><div class="col-12"><a class="btn btn-danger  pull-right delete_question_option" id="'+div_id+'">Delete</a></div></div>\n';
+
+        $("#append_options_"+id).append(html);
+
+
+    })
     // code to delete the question and update the indexes for current count for no of questions and next elements to be appended
     $(document).on('click', ".delete_question ", function (e) {
+
         e.preventDefault();
         if ($(this).data('delete') == 'yes') {
             var url = $(this).data('to');
@@ -683,9 +808,7 @@ $(document).ready(function () {
                 }
             })
         }
-        // here we adjust count array based on delete question
-        // count starting from 1 is set to add question  data-count attr,if count =0 , hide submit btn
-        // upon deleting a question all the tab contents and tab items are looped and re-ordered numerically and last tab is set to current
+
         let id = $(this).data('id');
         $('.class_' + id).remove();
         var Index = count_array.indexOf(id);
@@ -706,6 +829,17 @@ $(document).ready(function () {
         $('#add_question').data('count', data_count);
 
     })
+    $(document).on('click', ".delete_question_option ", function (e){
+        let id = $(this).attr('id');
+        console.log(id+"here");
+        $('#' + id).remove();
+        console.log(options_array);
+        var Index = options_array.indexOf(id);
+        options_array.splice(Index,1);
+        console.log(options_array);
+        $('#options_count_'+id).val(options_array.join(","));
+    })
+
     $(document).on('click', '.theme-tab-item', function () {
         var tab_id = $(this).attr('data-tab');
         $('ul.theme-tabs li').removeClass('current');

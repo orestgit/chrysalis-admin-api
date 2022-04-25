@@ -201,6 +201,8 @@ Route::group(['prefix'=>'admin', 'middleware'=>['customAuth']], function() {
     Route::post("update-surgical-category",[SurgicalCategoryController::class,'update'])->name('update-surgical-category');
     Route::get("delete-surgical-category",[SurgicalCategoryController::class,'delete'])->name('delete-surgical-category');
     Route::get("manage-surgical-questions",[AdminSurgicalQuestionController::class,'index'])->name('manage-surgical-questions');
+    Route::post("set-surgical-questions",[AdminSurgicalQuestionController::class,'setQuestions'])->name('set-surgical-questions');
+    Route::post("surgical-protocol-question",[AdminSurgicalQuestionController::class,'deleteSurgicalQuestion'])->name('delete-surgical-question');
     /** Surgical section */
 
 });

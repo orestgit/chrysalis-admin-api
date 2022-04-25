@@ -19,7 +19,7 @@ class CreateSurgicalQuestionOptionsTable extends Migration
             $table->string('heading');
             $table->text('text');
             $table->text('hint');
-            $table->integer('next_question_id');
+            $table->integer('next_question_id')->default(0);
             $table->timestamps();
         });
     }

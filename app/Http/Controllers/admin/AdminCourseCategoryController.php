@@ -50,7 +50,7 @@ class AdminCourseCategoryController extends Controller
             ]);
             $imageName = time().'.'.$request->icon->extension();
             $request->icon->move(public_path('uploads/courses'), $imageName);
-             CourseCategory::where('course_category_id',$request->input('course_category_id'))->update(['icon'=>$imageName]);
+            CourseCategory::where('course_category_id',$request->input('course_category_id'))->update(['icon'=>$imageName]);
         }
         CourseCategory::where('course_category_id',$request->input('course_category_id'))->update(['name'=>$request->input('name')]);
          return redirect('admin/list-course-categories')->with('success','Course category has been updated ');

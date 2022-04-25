@@ -7,6 +7,8 @@ use App\Models\ProtocolQuestion;
 use App\Models\ProtocolQuestionOption;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
+use App\Models\SurgicalQuestion;
+use App\Models\SurgicalQuestionOption;
 
 //use App\Models\
 function add_quiz_qustions($data){
@@ -119,7 +121,6 @@ function add_protocol_qustions($data){
     }
 }
 
-
 function getPosts($index, $author=false,$post_status=false){
     $data[$index]= Post::select('posts.*','users.first_name','users.last_name','users.image as profile_image')
         ->leftjoin('users','posts.author_id','=','users.id');
@@ -131,4 +132,50 @@ function getPosts($index, $author=false,$post_status=false){
     });
     return $data[$index]->get();
 }
+
+
+function add_surgical_questions($data){
+    $option_details = explode(",",$data['options_count']);
+    $question_details = explode(",",$data['ids']);
+    $iterations = count($question_details);
+    $count = 1;
+    foreach ($question_details as $value) {
+        if (!isset($data['question_'.$value]) && $iterations == $count) {
+            break;
+        }
+        $question = array(
+            'question'       =>   $data["question_" . $value],
+            'hint'           =>   $data["hint_" . $value],
+            'chapter_id'     =>   $data["chapter_id"],
+
+        );
+        $current_iteration=$value.'_';
+        $question_id = SurgicalQuestion::insertGetId($question);
+        $question_options=preg_grep('~' . $current_iteration . '~', $option_details);
+        $option_id='';
+        foreach ($question_options as $option){
+            $iterations_val=explode("_",$option)[1];
+            $option_id= SurgicalQuestionOption::insertGetId([
+                'question_id'   => $question_id,
+                'heading'       => isset($data['heading_'.$value.'_'.$iterations_val]) ? $data['heading_'.$value.'_'.$iterations_val]: '',
+                'text'          => isset($data['text_'.$value.'_'.$iterations_val])? $data['text_'.$value.'_'.$iterations_val] : '',
+                'hint'          => isset($data['hint_'.$value.'_'.$iterations_val])? $data['hint_'.$value.'_'.$iterations_val]:'',
+                'hint_color'    => isset($data['hint_color_'.$value.'_'.$iterations_val]) ? $data['hint_color_'.$value.'_'.$iterations_val]:'',
+            ]);
+            if(isset($data['images_'.$value.'_'.$iterations_val])){
+                foreach ($data['images_'.$value.'_'.$iterations_val] as $image) {
+                    $image_name = rand(1111111111,9999999999).'.'.$image->extension();
+                    $image->move(public_path('uploads/surgical'), $image_name);
+                    DB::table('attachments')->insert([
+                        'ref_id'    =>  $option_id,
+                        'link'      =>  $image_name,
+                        'type'      =>  'surgical',
+                    ]);
+                }
+            }
+        }
+    }
+}
+
+
 
