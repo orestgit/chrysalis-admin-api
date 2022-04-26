@@ -118,7 +118,7 @@
                                                                                                 ?>
                                                                                                 <?php $correct_option=0; ?>
                                                                                                 @foreach($question['options'] as $option)
-                                                                                                <div class="row" id="{{$option->option_id}}">
+                                                                                                <div class="row" data-del-id="{{$option->option_id}}">
                                                                                                         <div  class="col-12 col-lg-3">
                                                                                                             <div  class="section-header section-title-head section-lessons-md px-0">
                                                                                                                 <div class="section-header__title">
@@ -127,7 +127,7 @@
                                                                                                             </div>
                                                                                                             <div  class="input-fields-container">
                                                                                                                 <div class="form-group form-input-container">
-                                                                                                                    <textarea class="form-control validate_input input__theme textarea__theme"  name="question_{{$option->option_id}}" id="" rows="3" placeholder="Question">{{$option['hint']}}</textarea>
+                                                                                                                    <textarea class="form-control validate_input input__theme textarea__theme"  name="option_hint_{{$option->option_id}}" id="" rows="3" placeholder="Question">{{$option['hint']}}</textarea>
                                                                                                                 </div>
 
                                                                                                             </div>
@@ -142,7 +142,7 @@
                                                                                                             </div>
                                                                                                             <div  class="input-fields-container">
                                                                                                                 <div class="form-group form-input-container">
-                                                                                                                    <textarea class="form-control validate_input input__theme textarea__theme"  name="text_{{$option->option_id}}" id="" rows="3" placeholder="Text">{{$option['text']}}</textarea>
+                                                                                                                    <textarea class="form-control validate_input input__theme textarea__theme"  name="option_text_{{$option->option_id}}" id="" rows="3" placeholder="Text">{{$option['text']}}</textarea>
                                                                                                                 </div>
                                                                                                             </div>
                                                                                                         </div>
@@ -155,33 +155,45 @@
                                                                                                             </div>
                                                                                                             <div  class="input-fields-container">
                                                                                                                 <div class="form-group form-input-container">
-                                                                                                                    <textarea class="form-control validate_input input__theme textarea__theme"  name="heading_{{$option->option_id}}" id="" rows="3" placeholder="Heading">{{$option['heading']}}</textarea>
+                                                                                                                    <textarea class="form-control validate_input input__theme textarea__theme"  name="option_heading_{{$option->option_id}}" id="" rows="3" placeholder="Heading">{{$option['heading']}}</textarea>
                                                                                                                 </div>
                                                                                                             </div>
                                                                                                         </div>
-                                                                                                         <div  class="col-12 col-lg-3">
-                                                                                                        <div  class="section-header section-title-head section-lessons-md px-0">
-                                                                                                            <div class="section-header__title">
-                                                                                                                <h4 class="h4">  Hint Color </h4>
+                                                                                                         <div  class="col-12 col-lg-1">
+                                                                                                            <div  class="section-header section-title-head section-lessons-md px-0">
+                                                                                                                <div class="section-header__title">
+                                                                                                                    <h4 class="h4">  Hint Color </h4>
+                                                                                                                </div>
                                                                                                             </div>
-                                                                                                        </div>
-                                                                                                        <div  class="input-fields-container">
-                                                                                                            <div class="form-group form-input-container">
-                                                                                                                <input type="color" name="hint_color_{{$option->option_id}}" class="form-control" value="{{$option->hint_color}}">
+                                                                                                            <div  class="input-fields-container">
+                                                                                                                <div class="form-group form-input-container">
+                                                                                                                    <input type="color" name="option_hint_color_{{$option->option_id}}" class="form-control" value="{{$option->hint_color}}">
+                                                                                                                </div>
+
                                                                                                             </div>
 
                                                                                                         </div>
+                                                                                                        <div  class="col-12 col-lg-2">
+                                                                                                            <div  class="section-header section-title-head section-lessons-md px-0">
+                                                                                                                <div class="section-header__title">
+                                                                                                                    <h4 class="h4">  Images </h4>
+                                                                                                                </div>
+                                                                                                            </div>
 
-                                                                                                    </div>
+                                                                                                            <input type="file" name="option_images_{{$option->option_id}}[]" class="form-control"  multiple>
+
+
+
+                                                                                                        </div>
 
                                                                                                 </div>
-                                                                                                <div class="row">
+                                                                                                <div class="row" data-del-id="{{$option->option_id}}">
                                                                                                     <div class="col-12">
-                                                                                                        <a href="" class="btn btn-danger pull-right delete_question_option"  data-id="{{$option->option_id}}" }>Delete</a>
+                                                                                                        <a href="" class="btn btn-danger pull-right delete_surgical_question_option"  data-id="{{$option->option_id}}">Delete</a>
                                                                                                     </div>
                                                                                                 </div>
                                                                                                         @if(sizeof($option->images)>0)
-                                                                                                            <div class="row">
+                                                                                                            <div class="row" data-del-id="{{$option->option_id}}">
                                                                                                                 @foreach($option->images as $image)
                                                                                                                     <div  class="col-12 col-lg-2 image-area">
                                                                                                                         <div  class="input-fields-container">
@@ -192,20 +204,21 @@
                                                                                                                             </div>
                                                                                                                         </div>
                                                                                                                     </div>
-
                                                                                                                 @endforeach
+                                                                                                                    <hr/>
                                                                                                             </div>
 
                                                                                                         @endif
-                                                                                                    <hr/>
+
 
                                                                                                 @endforeach
 
-
+                                                                                                        <br/>
+                                                                                                        <br/>
                                                                                                 <div class="row">
                                                                                                     <div  class="col-12 col-lg-12">
                                                                                                         <div class="form-group form-input-container">
-                                                                                                            <a  data-id="{{$question['question_id']}}" class="btn btn__theme   btn-edit-remove delete_question pull-right" data-delete="yes" data-to="{{route('delete-surgical-question')}}">Delete</a>
+                                                                                                            <a  data-id="{{$question['question_id']}}" class="btn btn__theme   btn-edit-remove delete_question pull-right" data-delete="yes" data-to="{{route('delete-surgical-question')}}">Delete Question</a>
                                                                                                             <br/>
                                                                                                             <br/>
                                                                                                         </div>
@@ -260,6 +273,30 @@
     }, 2000);
 
         })
+        $('.delete_surgical_question_option').on('click',function (e) {
+            e.preventDefault();
+            var id=$(this).data('id');
+            var div =$("div").find(`[data-del-id='${id}']`)
+            var token = $("meta[name='csrf-token']").attr("content");
+            $.ajax(
+                {
+                    url: "surgical-protocol-question-option/",
+                    type: 'POST',
+                    data: {
+                        "id": id,
+                        "_token": token,
+                    },
+                    success: function (response){
+                        console.log(response);
+                        if(response.success==1){
+                            div.remove();
+                            $('#msg_holder').html('<div class="alert alert-danger" role="alert">Question option has been removed</div>').fadeOut(4000);
+                        }
+
+                    }
+                });
+            //
+        })
         $(".remove-image").click(function(event){
             var id = $(this).data("id");
             var token = $("meta[name='csrf-token']").attr("content");
@@ -281,6 +318,7 @@
                 });
 
         });
+
 </script>
     <style>
         #surgical-edit-form .col-lg-3{

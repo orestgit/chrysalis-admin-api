@@ -203,6 +203,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>['customAuth']], function() {
     Route::get("manage-surgical-questions",[AdminSurgicalQuestionController::class,'index'])->name('manage-surgical-questions');
     Route::post("set-surgical-questions",[AdminSurgicalQuestionController::class,'setQuestions'])->name('set-surgical-questions');
     Route::post("surgical-protocol-question",[AdminSurgicalQuestionController::class,'deleteSurgicalQuestion'])->name('delete-surgical-question');
+    Route::post("surgical-protocol-question-option",[AdminSurgicalQuestionController::class,'deleteSurgicalQuestionOption'])->name('surgical-protocol-question-option');
     /** Surgical section */
 
 });
