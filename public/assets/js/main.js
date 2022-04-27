@@ -727,14 +727,7 @@ $(document).ready(function () {
         })
 
     })
-    $(document).on('click', ".add_option ", function (e) {
-        var id=$(this).data('id');
-        var current_count = $(this).data('count') + 1;
-        var div_id= id+"_"+current_count;
-        $(this).data('count', current_count);
-        options_array.push(div_id);
-        $("#options_count_"+id).val(options_array.join(","));
-        var col_class=$("#option_select_"+id).val()==1 ? 'col-lg-2' :'col-lg-3';
+    function format_question_option_html(div_id,col_class,is_image_selected){
         var html="<div id='"+div_id+"'><div class='container-fluid'><div class='row'>";
         html+='<div class="col-12 '+col_class+'">\n' +
             '       <div class="section-header section-title-head section-lessons-md px-0">\n' +
@@ -772,7 +765,7 @@ $(document).ready(function () {
             '               <textarea class="form-control   input__theme textarea__theme" name="heading_'+div_id+'" id="" rows="3" placeholder="Heading"></textarea>\n' +
             '            </div>\n' +
             '                   </div>   </div>';
-        if($("#option_select_"+id).val()==1){
+        if(is_image_selected==1){
             html+='<div class="col-12 '+col_class+'">\n' +
                 '       <div class="section-header section-title-head section-lessons-md px-0">\n' +
                 '               <h4 class="h4">  Images</h4>\n' +
@@ -784,10 +777,29 @@ $(document).ready(function () {
                 '                   </div>   </div></div>';
         }
         html+='<div class="container-fluid"><div class="col-12"><a class="btn btn-danger  pull-right delete_question_option" id="'+div_id+'">Delete</a></div></div>\n';
-
+        return html;
+    }
+    $(document).on('click', ".add_option ", function (e) {
+        var id=$(this).data('id');
+        var current_count = $(this).data('count') + 1;
+        var div_id= id+"_"+current_count;
+        $(this).data('count', current_count);
+        options_array.push(div_id);
+        $("#options_count_"+id).val(options_array.join(","));
+        var col_class=$("#option_select_"+id).val()==1 ? 'col-lg-2' :'col-lg-3';
+        var html=format_question_option_html(div_id,col_class,$("#option_select_"+id).val());
         $("#append_options_"+id).append(html);
-
-
+    })
+    $(document).on('click', ".add_options", function (e) {
+        var id=$(this).data('id');
+        var current_count = $(this).data('count') + 1;
+        var div_id= id+"_"+current_count;
+        $(this).data('count', current_count);
+        options_array.push(div_id);
+        $("#options_count_"+id).val(options_array.join(","));
+        var col_class=$("#option_select_"+id).val()==1 ? 'col-lg-2' :'col-lg-3';
+        var html=format_question_option_html(div_id,col_class,$("#option_select_"+id).val());
+        $("#append_options_"+id).append(html);
     })
     // code to delete the question and update the indexes for current count for no of questions and next elements to be appended
     $(document).on('click', ".delete_question ", function (e) {

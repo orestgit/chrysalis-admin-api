@@ -70,4 +70,22 @@ class AdminSurgicalQuestionController extends Controller{
     public function deleteSurgicalQuestionOption(Request $request){
         return SurgicalQuestionOption::where('option_id',$request['id'])->delete() ==true? ['success' => 1] :['error' => 1];
     }
+    public  function updatequestionOptions(Request $request,$option){
+        $data['heading']='Surgical Algoritm Form';
+        $data['sub_heading']='Surgical Algoritm Form';
+        $data['title']= 'Manage Quiz Questions';
+        if($request->has("option_images_".$option->option_id)){
+            foreach ( $request->file("option_images_".$option->option_id) as $image) {
+                $image_name = rand(1111111111,9999999999).'.'.$image->extension();
+                $image->move(public_path('uploads/surgical'), $image_name);
+                DB::table('attachments')->insert([
+                    'ref_id'    =>  $option->option_id,
+                    'link'      =>  $image_name,
+                    'type'      =>  'surgical',
+                ]);
+            }
+        }
+        return view('admin.surgical_questions.update_question',$data);
+
+    }
 }
