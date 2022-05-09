@@ -12,7 +12,8 @@ use App\Http\Controllers\api\ProtocolController;
 use App\Http\Controllers\api\WalletController;
 use App\Http\Controllers\api\meetingPackagesController;
 use App\Http\Controllers\api\MeetingController;
-
+use App\Http\Controllers\api\SurgicalAlgorithmController;
+use App\Http\Controllers\api\SurgicalAlgorithmsListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,6 +78,10 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post("add-meeting",[MeetingController::class,'store'])->name('add-meeting');
     Route::post("my-meetings",[MeetingController::class,'MyMeetings'])->name('my-meetings');
     Route::post("end-meeting",[MeetingController::class,'endMeeting'])->name('end-meeting');
-    Route::post("meeting-packages",[MeetingController::class,'MeetingPackages'])->name('meeting-packages');
+    Route::post("meeting-packages",[MeetingController::class,'MeetingPackages'])->name('meeting-packages'); 
 
 });
+
+//TEMPORARILY allowing unauthenticated calls, while I get auth working on localhost :)
+Route::get("list-surgical-algorithms",[SurgicalAlgorithmsListController::class,'listSurgicalAlgorithms']);
+Route::get("process-algorithm",[SurgicalAlgorithmController::class,'processAlgorithm']);

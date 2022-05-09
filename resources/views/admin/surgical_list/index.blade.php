@@ -12,18 +12,35 @@
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-12 col-lg-12">
+
+                                        <!-- success / error -->
                                         @if (Session::has('success'))
-                                            <div class="alert alert-success alert-dismissible">
-                                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                                {{session()->get('success')}}
-                                            </div>
+                                        <div class="row">
+                                        <div class="col-12">
+                                        <div class="alert alert-success alert-dismissible">
+                                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                            {{session()->get('success')}}
+                                        </div>
+                                        </div>
+                                        </div>
                                         @endif
+                                        @if (Session::has('error'))
+                                        <div class="row">
+                                        <div class="col-12">
+                                        <div class="alert alert-danger alert-dismissible">
+                                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                                            {{session()->get('error')}}
+                                        </div>
+                                        </div>
+                                        </div>
+                                        @endif  
+
                                         <div class="card-container section-card-container p-0">
                                             <div class="section-header ">
                                                 <div class="header-left">
                                                     <div class="card-inner__end card-inner__start">
-                                                        <a href="{{route('add-surgical-category')}}" class="btn btn__theme  btn__add">
-                                                            Create New Category</a>
+                                                        <a href="{{route('add-surgical-algorythm')}}" class="btn btn__theme  btn__add">
+                                                            Create New Algorythm</a>
                                                     </div>
                                                 </div>
 
@@ -66,11 +83,11 @@
                                                                                                 </a>
 
                                                                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                                                                    <a class="dropdown-item" href="{{route('edit-surgical-category',['id'=> $category->id,'action'=>'edit'])}}">Edit</a>
-                                                                                                    <a class="dropdown-item" href="{{route('edit-surgical-category',['id'=> $category->id,'action'=>'view'])}}">View</a>
-                                                                                                    <a class="dropdown-item" href="{{route('manage-surgical-questions',['id'=> $category->id])}}">Manage Questions</a>
+                                                                                                    <a class="dropdown-item" href="{{route('edit-surgical-algorythm',['id'=> $category->id,'action'=>'edit'])}}">Edit</a>
+                                                                                                    <a class="dropdown-item" href="{{route('edit-surgical-algorythm',['id'=> $category->id,'action'=>'view'])}}">View</a>
+                                                                                                    <a class="dropdown-item" href="{{route('manage-surgical-screens',['id'=> $category->id])}}">Manage Screens</a>
                                                                                                     <a class="dropdown-item del-record"
-                                                                                                       data-url="{{route('delete-surgical-category',['id'=>$category->id])}}">Delete</a>
+                                                                                                       data-url="{{route('delete-surgical-algorythm',['id'=>$category->id])}}">Delete</a>
                                                                                                 </div>
                                                                                             </div>
                                                                                         </td>

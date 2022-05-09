@@ -92,6 +92,7 @@
 
 
 <body>
+    
 <!-- body wrapper -->
 <div id="main">
     <!-- sidebar -->
@@ -398,12 +399,13 @@
                                                               mask="url(#path-2-inside-2)" />
                                                     </svg>
 
-                                                </span> Surgicla Algoritham <span class="dropdown__arrow up">
+                                                </span> Surgical Algorithms <span class="dropdown__arrow up">
                                                     <img src="{{asset('assets/images/icons/arrow-down.svg')}}" alt="">
                                                 </span>
                                             </a>
                                             <ul class="submenu">
-                                                <li class="sub-menu-list"><a href="{{route('surgical-categories')}}">Surgical Categories</a></li>
+                                                <li class="sub-menu-list"><a href="{{route('surgical-list')}}">List of Algorithms</a></li>
+                                                <li class="sub-menu-list"><a href="{{route('add-surgical-algorythm')}}">Add New Algorithm</a></li>
                                             </ul>
                                         </li>
 

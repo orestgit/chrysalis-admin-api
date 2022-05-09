@@ -20,7 +20,8 @@ use App\Http\Controllers\admin\AdminCourseAdvertisementController;
 use App\Http\Controllers\user\UserController;
 use App\Http\Controllers\admin\AdminProtocolChapterController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Http\Controllers\admin\SurgicalCategoryController;
+use App\Http\Controllers\admin\AdminSurgicalListController;
+use App\Http\Controllers\admin\AdminSurgicalAlgorithmController;
 use App\Http\Controllers\admin\AdminSurgicalQuestionController;
 /*
 |--------------------------------------------------------------------------
@@ -194,13 +195,20 @@ Route::group(['prefix'=>'admin', 'middleware'=>['customAuth']], function() {
     Route::get("logout",[AdminController::class,'logout'])->name('admin-logout');
 
     /** Surgical section */
-    Route::get("surgical-categories",[SurgicalCategoryController::class,'index'])->name('surgical-categories');
-    Route::get("add-surgical-category",[SurgicalCategoryController::class,'add'])->name('add-surgical-category');
-    Route::post("store-surgical-category",[SurgicalCategoryController::class,'store'])->name('store-surgical-category');
-    Route::get("edit-surgical-category",[SurgicalCategoryController::class,'edit'])->name('edit-surgical-category');
-    Route::post("update-surgical-category",[SurgicalCategoryController::class,'update'])->name('update-surgical-category');
-    Route::get("delete-surgical-category",[SurgicalCategoryController::class,'delete'])->name('delete-surgical-category');
-    Route::get("manage-surgical-questions",[AdminSurgicalQuestionController::class,'index'])->name('manage-surgical-questions');
+    // Algorithms lists routes 
+    Route::get("surgical-list",[AdminSurgicalListController::class,'index'])->name('surgical-list');
+    Route::get("add-surgical-algorythm",[AdminSurgicalListController::class,'add'])->name('add-surgical-algorythm');
+    
+    Route::post("store-surgical-algorythm",[AdminSurgicalListController::class,'store'])->name('store-surgical-algorythm');
+    Route::get("edit-surgical-algorythm",[AdminSurgicalListController::class,'edit'])->name('edit-surgical-algorythm');
+    //Route::post("update-surgical-category",[SurgicalListController::class,'update'])->name('update-surgical-category');
+    Route::get("delete-surgical-algorythm",[AdminSurgicalListController::class,'delete'])->name('delete-surgical-algorythm');
+
+    // Manage algorithm screen routes
+    Route::get("manage-surgical-screens",[AdminSurgicalAlgorithmController::class,'index'])->name('manage-surgical-screens');
+
+
+
     Route::post("set-surgical-questions",[AdminSurgicalQuestionController::class,'setQuestions'])->name('set-surgical-questions');
     Route::post("surgical-protocol-question",[AdminSurgicalQuestionController::class,'deleteSurgicalQuestion'])->name('delete-surgical-question');
     Route::post("surgical-protocol-question-option",[AdminSurgicalQuestionController::class,'deleteSurgicalQuestionOption'])->name('surgical-protocol-question-option');

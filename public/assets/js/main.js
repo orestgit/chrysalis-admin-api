@@ -727,7 +727,7 @@ $(document).ready(function () {
         })
 
     })
-    function format_question_option_html(div_id,col_class,is_image_selected){
+    function format_question_option_html(eixsting_option,div_id,col_class,is_image_selected){
         var html="<div id='"+div_id+"'><div class='container-fluid'><div class='row'>";
         html+='<div class="col-12 '+col_class+'">\n' +
             '       <div class="section-header section-title-head section-lessons-md px-0">\n' +
@@ -735,7 +735,7 @@ $(document).ready(function () {
             '       </div>\n' +
             '         <div class="input-fields-container">\n' +
             '            <div class="form-group form-input-container">\n' +
-            '               <textarea class="form-control   input__theme textarea__theme" name="hint_'+div_id+'" id="" rows="3" placeholder="Hint"></textarea>\n' +
+            '               <textarea class="form-control   input__theme textarea__theme" name="'+eixsting_option+'hint_'+div_id+'" id="" rows="3" placeholder="Hint"></textarea>\n' +
             '            </div>\n' +
             '                   </div>   </div>';
         html+='<div class="col-12 '+col_class+'">\n' +
@@ -744,7 +744,7 @@ $(document).ready(function () {
             '       </div>\n' +
             '         <div class="input-fields-container">\n' +
             '            <div class="form-group form-input-container">\n' +
-            '              <input type="color" name="hint_color_'+div_id+'"  value="#000000" class="form-control" />\n' +
+            '              <input type="color" name="'+eixsting_option+'hint_color_'+div_id+'"  value="#000000" class="form-control" />\n' +
             '            </div>\n' +
             '                   </div>   </div>';
         html+='<div class="col-12 '+col_class+'">\n' +
@@ -753,7 +753,7 @@ $(document).ready(function () {
             '       </div>\n' +
             '         <div class="input-fields-container">\n' +
             '            <div class="form-group form-input-container">\n' +
-            '               <textarea class="form-control   input__theme textarea__theme" name="text_'+div_id+'" id="" rows="3" placeholder="Text"></textarea>\n' +
+            '               <textarea class="form-control   input__theme textarea__theme" name="'+eixsting_option+'text_'+div_id+'" id="" rows="3" placeholder="Text"></textarea>\n' +
             '            </div>\n' +
             '                   </div>   </div>';
         html+='<div class="col-12 '+col_class+'">\n' +
@@ -762,7 +762,7 @@ $(document).ready(function () {
             '       </div>\n' +
             '         <div class="input-fields-container">\n' +
             '            <div class="form-group form-input-container">\n' +
-            '               <textarea class="form-control   input__theme textarea__theme" name="heading_'+div_id+'" id="" rows="3" placeholder="Heading"></textarea>\n' +
+            '               <textarea class="form-control   input__theme textarea__theme" name="'+eixsting_option+'heading_'+div_id+'" id="" rows="3" placeholder="Heading"></textarea>\n' +
             '            </div>\n' +
             '                   </div>   </div>';
         if(is_image_selected==1){
@@ -772,11 +772,12 @@ $(document).ready(function () {
                 '       </div>\n' +
                 '         <div class="input-fields-container">\n' +
                 '            <div class="form-group form-input-container">\n' +
-                '           <input type="file" name="images_'+div_id+'[]"  multiple > \n'+
+                '           <input type="file" name="'+eixsting_option+'images_'+div_id+'[]"  multiple > \n'+
                 '            </div>\n' +
                 '                   </div>   </div></div>';
         }
-        html+='<div class="container-fluid"><div class="col-12"><a class="btn btn-danger  pull-right delete_question_option" id="'+div_id+'">Delete</a></div></div>\n';
+        var data_existing= eixsting_option =='' ?0:1
+        html+='<div class="container-fluid"><div class="col-12"><a class="btn btn-danger  pull-right delete_question_option"  data-existing="'+data_existing+'" id="'+div_id+'">Delete</a></div></div>\n';
         return html;
     }
     $(document).on('click', ".add_option ", function (e) {
@@ -787,19 +788,21 @@ $(document).ready(function () {
         options_array.push(div_id);
         $("#options_count_"+id).val(options_array.join(","));
         var col_class=$("#option_select_"+id).val()==1 ? 'col-lg-2' :'col-lg-3';
-        var html=format_question_option_html(div_id,col_class,$("#option_select_"+id).val());
+        var html=format_question_option_html('',div_id,col_class,$("#option_select_"+id).val());
         $("#append_options_"+id).append(html);
     })
-    $(document).on('click', ".add_options", function (e) {
+    var  existing_options_array=[];
+    $(document).on('click', ".add_existing_option", function (e) {
         var id=$(this).data('id');
         var current_count = $(this).data('count') + 1;
         var div_id= id+"_"+current_count;
         $(this).data('count', current_count);
-        options_array.push(div_id);
-        $("#options_count_"+id).val(options_array.join(","));
+        existing_options_array.push(div_id);
+        $("#existing_options_count_"+id).val(existing_options_array.join(","));
         var col_class=$("#option_select_"+id).val()==1 ? 'col-lg-2' :'col-lg-3';
-        var html=format_question_option_html(div_id,col_class,$("#option_select_"+id).val());
+        var html=format_question_option_html('existing_',div_id,col_class,$("#option_select_"+id).val());
         $("#append_options_"+id).append(html);
+        console.log(existing_options_array);
     })
     // code to delete the question and update the indexes for current count for no of questions and next elements to be appended
     $(document).on('click', ".delete_question ", function (e) {
@@ -842,14 +845,14 @@ $(document).ready(function () {
 
     })
     $(document).on('click', ".delete_question_option ", function (e){
+        var existing = $(this).data('existing') ==1 ? 'existing_' :'';
+        var arr=existing!='' ? existing_options_array:options_array;
         let id = $(this).attr('id');
-        console.log(id+"here");
         $('#' + id).remove();
-        console.log(options_array);
-        var Index = options_array.indexOf(id);
-        options_array.splice(Index,1);
-        console.log(options_array);
-        $('#options_count_'+id).val(options_array.join(","));
+        var Index = arr.indexOf(id);
+        arr.splice(Index,1);
+        console.log(arr);
+         $("#"+existing+''+"options_count_"+id).val(existing+''+options_array.join(","));
     })
 
     $(document).on('click', '.theme-tab-item', function () {

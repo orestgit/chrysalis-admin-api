@@ -3,7 +3,7 @@
     <div class="container-fluid main-container">
     @include('admin_layouts.header')
     <!-- bottom main -->
-        <form action="{{route('store-surgical-category')}}"  method="post" enctype="multipart/form-data">
+        <form action="{{route('store-surgical-algorythm')}}"  method="post" enctype="multipart/form-data">
             @csrf
         <div class="row wrapper-space-top">
             <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -26,9 +26,9 @@
                                             <div class="section-content inline-content ">
                                                 <div id="tab-1" class="theme-tab-content current create-protocol">
                                                     <div class="form-container ">
-                                                        <label>Title</label>
+                                                        <label>Algorythm Title</label>
                                                         <input type="text" class="form-control input__theme  @error('title') is-invalid @enderror"
-                                                               value="{{old('title')}}" name="title" id="" aria-describedby="helpId" placeholder="Type Title">
+                                                               value="{{old('title')}}" name="title" id="" aria-describedby="helpId" placeholder="Type Algorythm Title">
                                                         @error('title')
                                                         <span class="invalid-feedback" role="alert">
                                                                 <strong>{{ $message }}</strong>

@@ -21,7 +21,8 @@ class AdminSurgicalQuestionController extends Controller{
             $question->options=SurgicalQuestionOption::where('question_id',$question['question_id'])->get();
                 foreach ($question->options as $option){
                     $option->images = DB::table('attachments')->select('link','attachment_id')->where('ref_id',$option->option_id)->where('type','surgical')->get();
-                }
+            }
+
         }
         return view('admin.surgical_questions.edit_questions',$data);
     }
@@ -55,6 +56,25 @@ class AdminSurgicalQuestionController extends Controller{
                         }
                     }
 
+                }
+            }
+            foreach ($questions as $question) {
+                if ($request->has('existing_options_count_'.$question->question_id) && $request->input('existing_options_count_' . $question->question_id) != null) {
+                    $option_to_update = explode(",", $request->input('existing_options_count_' . $question->question_id));
+                    foreach ($option_to_update as $value) {
+                        $val=  explode("_", $value)[1];
+
+                        /*      dd($request->input('existing_hint_50_1'));
+                        dd( $request->input('existing_heading_'.$question->question_id .'_'.$val));*/
+                        $new_question_option= array(
+                            'question_id' => $question->question_id,
+                            'heading' => $request->input('existing_heading_' . $question->question_id.'_'.$val),
+                            'text' => $request->input('existing_text_' . $question->question_id.'_'.$val),
+                            'hint' => $request->input('existing_hint_' . $question->question_id.'_'.$val),
+                            'hint_color' => $request->input('existing_hint_color_'.$question->question_id.'_'.$val),
+                        );
+                        DB::table('surgical_question_options')->insert($new_question_option);
+                    }
                 }
             }
         }

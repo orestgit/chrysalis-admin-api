@@ -207,17 +207,21 @@
                                                                                                             </div>
 
                                                                                                         @endif
+                                                                                                <div id="append_options_{{$question->question_id}}"></div>
+
+                                                                                                {{--<div id="options_count_{{$question->question_id}}"></div>--}}
                                                                                                 <div class="col-12 col-lg-4">
                                                                                                     <div class="input-fields-container">
-                                                                                                        <input type="hidden" name="options_count" id="options_count_1">
+                                                                                                        <input type="hidden" name="existing_options_count" id="options_count{{$question->question_id}}">
                                                                                                         <div class="form-group form-input-container">
-                                                                                                            <select class="form-control" id="option_select_1">
+                                                                                                            <select class="form-control" id="option_select_{{$question->question_id}}">
                                                                                                                 <option value="1">Option With images</option><option value="2">Option Without images</option></select></div></div></div>
 
-                                                                                                <div class="col-12 col-lg-3"><a data-id="1" class="btn btn__theme    btn-edit-remove add_option" data-count="0" id="add_option_1">Add Question Option</a></div>
-
+                                                                                                <div class="col-12 col-lg-3"><a data-id="{{$question->question_id}}" class="btn btn__theme    btn-edit-remove add_existing_option" data-count="0" id="options_count_{{$question->question_id}}">Add Question Option</a></div>
+                                                                                                <input type="hidden" name="existing_options_count_{{$question->question_id}}" value="" id="existing_options_count_{{$question->question_id}}">
 
                                                                                                 @endforeach
+
 
                                                                                                         <br/>
                                                                                                         <br/>

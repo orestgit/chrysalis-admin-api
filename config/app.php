@@ -52,8 +52,9 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
-
+    //'url' => env('APP_URL', 'http://localhost/chrysalis'),
+    'url' => env('APP_URL', '  https://rexsolution.net/chrysalis-admin'),
+  
     'asset_url' => env('ASSET_URL', null),
 
     /*
