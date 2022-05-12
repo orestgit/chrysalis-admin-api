@@ -3466,4 +3466,6 @@ section .inline-left-section .inline-sidebar .section-header__controls {
     padding: 6px 9px;
   }
 }
+
+.fal, .far{font-family: "Font Awesome 5 Pro" !important}
 /*# sourceMappingURL=index.css.map */

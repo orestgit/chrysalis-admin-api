@@ -3,7 +3,7 @@
     <div class="container-fluid main-container">
     @include('admin_layouts.header')
     <!-- bottom main -->
-        <form action="{{route('manage-surgical-screens')}}"  method="post" enctype="multipart/form-data">
+        <form action="{{ url()->full() }}"  method="post" enctype="multipart/form-data">
             @csrf
         <div class="row wrapper-space-top">
             <div class="col-12 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -28,14 +28,14 @@
                                                     <div class="form-container ">
                                                         <label>Title</label>
                                                         <input type="text" class="form-control input__theme  @error('title') is-invalid @enderror"
-                                                               value="{{$screen['title']}}" name="title" id="" aria-describedby="helpId" placeholder="Type Title">
-                                                        @error('title')
+                                                               value="{{$algorithm['title']}}" name="title" id="" aria-describedby="helpId" placeholder="Type Title">
+                                                        @error('title')                                                         
                                                         <span class="invalid-feedback" role="alert">
                                                                 <strong>{{ $message }}</strong>
                                                             </span>
-                                                        @enderror
+                                                        @enderror                                                           
                                                     </div>
-                                                    <input type="hidden" name="id" value="{{$screen['id']}}">
+                                                    <input type="hidden" name="id" value="{{$algorithm['id']}}">
 
                                                 </div>
 

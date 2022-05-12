@@ -954,6 +954,10 @@ section {
     opacity: 0;
 }
 
+.fal, .far {
+    font-family: "Font Awesome 5 Pro" !important;
+}
+
 // extra queries for Settings ///@include
 @media (min-width: 1291px) and (max-width: 1400px) {
     .main-left-container {

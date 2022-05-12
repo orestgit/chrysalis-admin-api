@@ -51,7 +51,6 @@ class AdminSurgicalListController extends Controller
     public  function delete(Request $request)
     {
         SurgicalAlgorithmsList::where('id', $request['id'])->delete();
-        // TODO: delete related tables. Ideally via foreign key
         return redirect()->route('surgical-list')->with('success', 'Surgical Algorythm has been deleted');
     }
 }

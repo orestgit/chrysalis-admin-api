@@ -17,3 +17,4 @@ yarn-error.log
 composer.lock
 .env.example
 composer.lock
+config/app.php

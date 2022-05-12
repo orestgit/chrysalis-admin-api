@@ -22,7 +22,7 @@
                         </li> -->
                         <li class="header-right">
                             <a class="icon-button chatbox-open">
-                                <img src="../../assets/images/icons/chat.svg" alt="" srcset="">
+                                <i class="far fa-bell"></i>
                                 <span class="count chat">
                                         11
                                     </span>
@@ -81,7 +81,7 @@
                         </li>
                         <li class="menu-notificaton-wrap">
                             <a class="icon-button bell_notification_clicker">
-                                <img src="../../assets/images/icons/notifiction.svg" alt="" srcset="">
+                                <i class="fal fa-comment-dots"></i>
                                 <span class="count notification">
                                         2
                                     </span>
@@ -198,29 +198,7 @@
                 <div class="main-left-container">
                     <section>
                         <div class="container-fluid">
-
-                            <!-- success / error -->
-                            @if (Session::has('success'))
-                            <div class="row">
-                            <div class="col-12">
-                            <div class="alert alert-success alert-dismissible">
-                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                {{session()->get('success')}}
-                            </div>
-                            </div>
-                            </div>
-                            @endif
-                            @if (Session::has('error'))
-                            <div class="row">
-                            <div class="col-12">
-                            <div class="alert alert-danger alert-dismissible">
-                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                {{session()->get('error')}}
-                            </div>
-                            </div>
-                            </div>
-                            @endif  
-
+                            @include('messages')                             
                             <div class="row">
                                 <div class="col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-4 card">
                                     <div class="card-container home-card-section">

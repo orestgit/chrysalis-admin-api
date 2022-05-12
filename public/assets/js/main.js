@@ -1263,5 +1263,7 @@ $(function () {
     $('body').on('focus',".date_picker", function(){
         $(this).datepicker();
     });
+    
+    $('li.admin-dashboard-active a').trigger('click');
 
 });
